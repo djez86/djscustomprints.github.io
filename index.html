@@ -5,94 +5,106 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DJ's Custom Prints</title>
   <style>
+    /* General Styles */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       line-height: 1.6;
-      background-color: #f0f8ff; /* Very pale blue */
-      color: #ffffff; /* White text */
+      color: #333;
     }
-
     header {
-      background: #00509e; /* Newfoundland blue */
-      color: #ffffff;
-      padding: 20px 10px;
-      text-align: center;
+      background: #0044cc;
+      color: white;
+      padding: 10px 20px;
+      position: relative;
     }
-
     header h1 {
       margin: 0;
-      font-size: 2.5em;
     }
-
-    header p {
-      margin: 10px 0 0;
-      font-size: 1.2em;
-    }
-
     nav {
-      margin-top: 20px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
     }
-
-    nav a {
-      color: #ffd700; /* Gold links */
+    .menu {
+      display: none;
+      flex-direction: column;
+      background: #0044cc;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 200px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+    .menu a {
+      color: white;
       text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
+      padding: 10px;
+      text-align: center;
+    }
+    .menu a:hover {
+      background: #003399;
+    }
+    .hamburger {
+      font-size: 24px;
+      cursor: pointer;
+      padding: 10px;
     }
 
-    nav a:hover {
-      text-decoration: underline;
-    }
-
+    /* Main Content */
     section {
       padding: 20px;
-      margin: 20px auto;
       max-width: 800px;
-      background: #00509e; /* Newfoundland blue */
-      border-radius: 10px;
+      margin: 20px auto;
+      background: #f0f8ff;
+      border-radius: 8px;
     }
-
     section h2 {
-      color: #ffd700; /* Gold headers */
-      font-size: 1.8em;
+      color: #0044cc;
     }
 
     footer {
-      background: #00376d; /* Darker blue */
-      color: #ffffff;
+      background: #0044cc;
+      color: white;
       text-align: center;
-      padding: 10px 0;
+      padding: 10px;
       margin-top: 20px;
     }
 
-    footer a {
-      color: #ffd700; /* Gold links */
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .menu {
+        display: flex;
+      }
     }
   </style>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 </head>
 <body>
   <!-- Header -->
   <header>
     <h1>DJ's Custom Prints</h1>
-    <p>Your one-stop shop for personalized 3D prints, proudly made in Newfoundland!</p>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
     <nav>
-      <a href="#about">About</a>
-      <a href="#products">Products</a>
-      <a href="#contact">Contact</a>
+      <div id="menu" class="menu">
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </div>
     </nav>
   </header>
 
   <!-- About Section -->
   <section id="about">
     <h2>About Us</h2>
-    <p>Welcome to DJ's Custom Prints! We are proud to be a Newfoundland-based brand, specializing in creating high-quality, personalized 3D-printed items tailored to your needs. Whether you're looking for unique gifts, custom keychains, or decorations, we bring your ideas to life.</p>
+    <p>Welcome to DJ's Custom Prints! We are proud to be a Newfoundland-based business creating exceptional, personalized 3D-printed items tailored to your needs. Whether you're looking for unique gifts, custom keychains, or decorations, we bring your ideas to life.</p>
   </section>
 
   <!-- Products Section -->
@@ -106,12 +118,20 @@
     </ul>
   </section>
 
+  <!-- Gallery Section -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <p>Check out some of our featured designs below:</p>
+    <div>
+      <p><em>Gallery upload functionality is coming soon!</em></p>
+    </div>
+  </section>
+
   <!-- Contact Section -->
   <section id="contact">
     <h2>Contact Us</h2>
     <p>Have a question or need a custom order? Reach out to us:</p>
     <p>Email: <a href="mailto:support@djscustomprints.ca">support@djscustomprints.ca</a></p>
-    <p>Follow us on social media for updates and new designs!</p>
   </section>
 
   <!-- Footer -->
@@ -120,4 +140,3 @@
   </footer>
 </body>
 </html>
-
