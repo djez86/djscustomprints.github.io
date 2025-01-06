@@ -65,11 +65,22 @@
       gap: 20px;
     }
 
+    .gallery figure {
+      text-align: center;
+      margin: 0;
+    }
+
     .gallery img {
       max-width: 300px;
       border: 2px solid #003366;
       border-radius: 5px;
       box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .gallery figcaption {
+      margin-top: 10px;
+      font-size: 1em;
+      color: #003366;
     }
 
     footer {
@@ -115,12 +126,14 @@
   <section id="gallery">
     <h2>Gallery</h2>
     <div class="gallery">
-      <div>
-        <img src="redwings%20front.jpeg" alt="Custom Shirt Keychain - Front">
-      </div>
-      <div>
-        <img src="redwings%20back.jpeg" alt="Custom Shirt Keychain - Back">
-      </div>
+      <figure>
+        <img src="redwings front.jpeg" alt="Custom Shirt Keychain - Front">
+        <figcaption>Custom Redwings Hockey Jersey - Front</figcaption>
+      </figure>
+      <figure>
+        <img src="redwings back.jpeg" alt="Custom Shirt Keychain - Back">
+        <figcaption>Custom Redwings Hockey Jersey - Back</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -138,3 +151,4 @@
   </footer>
 </body>
 </html>
+
