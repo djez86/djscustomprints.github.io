@@ -75,10 +75,15 @@
       border-radius: 5px;
       box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
       cursor: pointer;
+      transition: transform 0.3s ease;
     }
 
-    /* Full-screen image modal styles */
-    .modal {
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Full-screen styles */
+    .fullscreen {
       display: none;
       position: fixed;
       top: 0;
@@ -90,13 +95,14 @@
       align-items: center;
     }
 
-    .modal img {
+    .fullscreen img {
       max-width: 90%;
       max-height: 90%;
-      border-radius: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 20px #fff;
     }
 
-    .modal:target {
+    .fullscreen:target {
       display: flex;
     }
 
@@ -143,14 +149,16 @@
   <section id="gallery">
     <h2>Gallery</h2>
     <div class="gallery">
+      <!-- Image 1 -->
       <div class="gallery-item">
-        <a href="#modal1">
+        <a href="#fullscreen1">
           <img src="redwings_front.jpeg" alt="Custom Redwings Hockey Jersey - Front">
         </a>
         <p>Custom Redwings Hockey Jersey - Front</p>
       </div>
+      <!-- Image 2 -->
       <div class="gallery-item">
-        <a href="#modal2">
+        <a href="#fullscreen2">
           <img src="redwings_back.jpeg" alt="Custom Redwings Hockey Jersey - Back">
         </a>
         <p>Custom Redwings Hockey Jersey - Back</p>
@@ -158,12 +166,12 @@
     </div>
   </section>
 
-  <!-- Full-Screen Modals -->
-  <div id="modal1" class="modal">
-    <img src="redwings_front.jpeg" alt="Custom Redwings Hockey Jersey - Front">
+  <!-- Full-Screen Images -->
+  <div id="fullscreen1" class="fullscreen">
+    <a href="#gallery"><img src="redwings_front.jpeg" alt="Custom Redwings Hockey Jersey - Front"></a>
   </div>
-  <div id="modal2" class="modal">
-    <img src="redwings_back.jpeg" alt="Custom Redwings Hockey Jersey - Back">
+  <div id="fullscreen2" class="fullscreen">
+    <a href="#gallery"><img src="redwings_back.jpeg" alt="Custom Redwings Hockey Jersey - Back"></a>
   </div>
 
   <!-- Contact Section -->
@@ -180,3 +188,4 @@
   </footer>
 </body>
 </html>
+
