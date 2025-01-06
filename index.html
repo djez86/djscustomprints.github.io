@@ -65,6 +65,13 @@
       gap: 20px;
     }
 
+    .gallery img {
+      max-width: 300px;
+      border: 2px solid #003366;
+      border-radius: 5px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
     footer {
       background: #003366;
       color: #fff;
@@ -97,17 +104,24 @@
   <section id="products">
     <h2>Our Products</h2>
     <ul style="list-style: none; padding: 0;">
-      <li>&#8226; Custom Keychains</li>
-      <li>&#8226; Personalized Ornaments</li>
-      <li>&#8226; Event-Specific Gifts</li>
-      <li>&#8226; And much more!</li>
+      <li>• Custom Keychains</li>
+      <li>• Personalized Ornaments</li>
+      <li>• Event-Specific Gifts</li>
+      <li>• And much more!</li>
     </ul>
   </section>
 
   <!-- Gallery Section -->
   <section id="gallery">
     <h2>Gallery</h2>
-    <p>Our gallery is coming soon! Stay tuned for updates on our latest creations.</p>
+    <div class="gallery">
+      <div>
+        <img src="redwings front.jpeg" alt="Custom Shirt Keychain - Front">
+      </div>
+      <div>
+        <img src="redwings back.jpeg" alt="Custom Shirt Keychain - Back">
+      </div>
+    </div>
   </section>
 
   <!-- Contact Section -->
