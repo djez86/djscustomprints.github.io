@@ -4,15 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery - DJ's Custom Prints</title>
-  <link rel="icon" href="favicon-16x16.png" type="image/png">
+  <link rel="icon" href="favicon.png" type="image/png">
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      line-height: 1.6;
       background: linear-gradient(to bottom, #e6f7ff, #ffffff);
-      color: #333;
     }
 
     header {
@@ -47,20 +45,10 @@
       text-decoration: underline;
     }
 
-    .gallery-container {
-      padding: 20px;
-      margin: 20px auto;
-      max-width: 1200px;
-      text-align: center;
-    }
-
-    .gallery-container h2 {
-      color: #003366;
-      font-size: 2em;
-      margin-bottom: 20px;
-    }
-
     .gallery {
+      padding: 20px;
+      margin: 0 auto;
+      max-width: 1200px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -69,30 +57,22 @@
 
     .gallery-item {
       background: #fff;
-      border-radius: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s, box-shadow 0.2s;
-      overflow: hidden;
-      width: 250px;
+      padding: 10px;
       text-align: center;
+      width: 200px;
     }
 
     .gallery-item img {
-      width: 100%;
-      height: auto;
-      display: block;
+      max-width: 100%;
+      border-radius: 5px;
+      transition: transform 0.2s;
     }
 
-    .gallery-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-
-    .gallery-item p {
-      margin: 10px;
-      font-size: 1em;
-      font-weight: bold;
-      color: #003366;
+    .gallery-item img:hover {
+      transform: scale(1.1);
     }
 
     footer {
@@ -102,14 +82,9 @@
       padding: 10px 0;
       margin-top: 20px;
     }
-
-    footer p {
-      margin: 0;
-    }
   </style>
 </head>
 <body>
-  <!-- Header -->
   <header>
     <h1>Gallery</h1>
     <p>Explore our custom 3D-printed creations!</p>
@@ -120,9 +95,8 @@
     </nav>
   </header>
 
-  <!-- Gallery Section -->
-  <div class="gallery-container">
-    <h2>Our Creations</h2>
+  <main>
+    <h2 style="text-align: center; margin-top: 20px;">Our Creations</h2>
     <div class="gallery">
       <div class="gallery-item">
         <img src="redwings front.jpeg" alt="Custom Redwings Hockey Jersey - Front">
@@ -148,10 +122,21 @@
         <img src="MontrealCanadienskeychain.jpg" alt="Montreal Canadiens Keychain">
         <p>Montreal Canadiens Keychain</p>
       </div>
+      <div class="gallery-item">
+        <img src="dogkeychain.jpg" alt="Dog Keychain">
+        <p>Dog Keychain</p>
+      </div>
+      <div class="gallery-item">
+        <img src="jesus.jpg" alt="Jesus Figurine">
+        <p>Jesus Figurine</p>
+      </div>
+      <div class="gallery-item">
+        <img src="dogkeychain1.jpg" alt="Dog Keychain (Alternate)">
+        <p>Dog Keychain (Alternate)</p>
+      </div>
     </div>
-  </div>
+  </main>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2024 DJ's Custom Prints. Proudly made in Newfoundland. All rights reserved.</p>
   </footer>
