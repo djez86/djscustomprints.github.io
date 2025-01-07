@@ -4,13 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery - DJ's Custom Prints</title>
+  <link rel="icon" href="favicon.png" type="image/png">
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    /* General Reset */
+    body, h1, h2, p, ul {
       margin: 0;
       padding: 0;
+    }
+
+    /* Body Styling */
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #d8eefa, #ffffff);
       color: #333;
-      background-color: #f7f7f7;
+      line-height: 1.6;
     }
 
     header {
@@ -18,20 +25,21 @@
       color: #fff;
       padding: 20px 10px;
       text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     header h1 {
-      margin: 0;
       font-size: 2.5em;
+      margin-bottom: 10px;
     }
 
     header p {
-      margin: 10px 0 0;
       font-size: 1.2em;
+      margin: 0;
     }
 
     nav {
-      margin-top: 20px;
+      margin-top: 10px;
     }
 
     nav a {
@@ -39,53 +47,60 @@
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      color: #fff;
     }
 
+    /* Section Styling */
     section {
       padding: 20px;
-      margin: 20px auto;
       max-width: 1200px;
+      margin: 0 auto;
       text-align: center;
     }
 
     section h2 {
       color: #003366;
-      font-size: 1.8em;
+      font-size: 2em;
       margin-bottom: 20px;
     }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    .gallery-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 20px;
     }
 
-    .gallery figure {
-      text-align: center;
+    .gallery-container figure {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       margin: 0;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 220px;
+      text-align: center;
     }
 
-    .gallery img {
+    .gallery-container figure:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .gallery-container img {
       max-width: 100%;
-      height: auto;
-      border: 2px solid #003366;
-      border-radius: 5px;
-      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      transition: transform 0.2s;
+      border-bottom: 2px solid #003366;
+      border-radius: 8px 8px 0 0;
     }
 
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-
-    .gallery figcaption {
-      margin-top: 10px;
+    .gallery-container figcaption {
+      padding: 10px;
       font-size: 1em;
+      font-weight: bold;
       color: #003366;
     }
 
@@ -95,6 +110,11 @@
       text-align: center;
       padding: 10px 0;
       margin-top: 20px;
+      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    footer p {
+      font-size: 0.9em;
     }
   </style>
 </head>
@@ -113,7 +133,7 @@
   <!-- Gallery Section -->
   <section>
     <h2>Our Creations</h2>
-    <div class="gallery">
+    <div class="gallery-container">
       <figure>
         <img src="redwings front.jpeg" alt="Custom Redwings Hockey Jersey - Front">
         <figcaption>Custom Redwings Hockey Jersey - Front</figcaption>
