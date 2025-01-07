@@ -4,20 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery - DJ's Custom Prints</title>
-  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="icon" href="favicon-16x16.png" type="image/png">
   <style>
-    /* General Reset */
-    body, h1, h2, p, ul {
-      margin: 0;
-      padding: 0;
-    }
-
-    /* Body Styling */
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #d8eefa, #ffffff);
-      color: #333;
+      margin: 0;
+      padding: 0;
       line-height: 1.6;
+      background: linear-gradient(to bottom, #e6f7ff, #ffffff);
+      color: #333;
     }
 
     header {
@@ -25,21 +20,20 @@
       color: #fff;
       padding: 20px 10px;
       text-align: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     header h1 {
+      margin: 0;
       font-size: 2.5em;
-      margin-bottom: 10px;
     }
 
     header p {
+      margin: 10px 0 0;
       font-size: 1.2em;
-      margin: 0;
     }
 
     nav {
-      margin-top: 10px;
+      margin-top: 20px;
     }
 
     nav a {
@@ -47,58 +41,55 @@
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
-      transition: color 0.3s ease;
     }
 
     nav a:hover {
-      color: #fff;
+      text-decoration: underline;
     }
 
-    /* Section Styling */
-    section {
+    .gallery-container {
       padding: 20px;
+      margin: 20px auto;
       max-width: 1200px;
-      margin: 0 auto;
       text-align: center;
     }
 
-    section h2 {
+    .gallery-container h2 {
       color: #003366;
       font-size: 2em;
       margin-bottom: 20px;
     }
 
-    .gallery-container {
+    .gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
     }
 
-    .gallery-container figure {
+    .gallery-item {
       background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      margin: 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
       overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      width: 220px;
+      width: 250px;
       text-align: center;
     }
 
-    .gallery-container figure:hover {
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .gallery-item:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
 
-    .gallery-container img {
-      max-width: 100%;
-      border-bottom: 2px solid #003366;
-      border-radius: 8px 8px 0 0;
-    }
-
-    .gallery-container figcaption {
-      padding: 10px;
+    .gallery-item p {
+      margin: 10px;
       font-size: 1em;
       font-weight: bold;
       color: #003366;
@@ -110,11 +101,10 @@
       text-align: center;
       padding: 10px 0;
       margin-top: 20px;
-      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
     }
 
     footer p {
-      font-size: 0.9em;
+      margin: 0;
     }
   </style>
 </head>
@@ -131,35 +121,35 @@
   </header>
 
   <!-- Gallery Section -->
-  <section>
+  <div class="gallery-container">
     <h2>Our Creations</h2>
-    <div class="gallery-container">
-      <figure>
+    <div class="gallery">
+      <div class="gallery-item">
         <img src="redwings front.jpeg" alt="Custom Redwings Hockey Jersey - Front">
-        <figcaption>Custom Redwings Hockey Jersey - Front</figcaption>
-      </figure>
-      <figure>
+        <p>Custom Redwings Hockey Jersey - Front</p>
+      </div>
+      <div class="gallery-item">
         <img src="redwings back.jpeg" alt="Custom Redwings Hockey Jersey - Back">
-        <figcaption>Custom Redwings Hockey Jersey - Back</figcaption>
-      </figure>
-      <figure>
+        <p>Custom Redwings Hockey Jersey - Back</p>
+      </div>
+      <div class="gallery-item">
         <img src="customnamekeychain.jpg" alt="Custom Name Keychain">
-        <figcaption>Custom Name Keychain</figcaption>
-      </figure>
-      <figure>
+        <p>Custom Name Keychain</p>
+      </div>
+      <div class="gallery-item">
         <img src="therockkeychain.jpg" alt="The Rock Keychain">
-        <figcaption>The Rock Keychain</figcaption>
-      </figure>
-      <figure>
+        <p>The Rock Keychain</p>
+      </div>
+      <div class="gallery-item">
         <img src="angelheart.jpg" alt="Angel Heart Keychain">
-        <figcaption>Angel Heart Keychain</figcaption>
-      </figure>
-      <figure>
+        <p>Angel Heart Keychain</p>
+      </div>
+      <div class="gallery-item">
         <img src="MontrealCanadienskeychain.jpg" alt="Montreal Canadiens Keychain">
-        <figcaption>Montreal Canadiens Keychain</figcaption>
-      </figure>
+        <p>Montreal Canadiens Keychain</p>
+      </div>
     </div>
-  </section>
+  </div>
 
   <!-- Footer -->
   <footer>
