@@ -1,234 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery - DJ's Custom Prints</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background-color: #eaf6ff;
-      color: #333;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - DJ's Custom Prints</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #eaf6ff;
+        }
 
-    header {
-      background: #003366;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
+        header {
+            background: #003366;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
+        header h1 {
+            margin: 0;
+        }
 
-    header p {
-      margin: 10px 0 0;
-      font-size: 1.2em;
-    }
+        nav {
+            margin-top: 10px;
+        }
 
-    nav {
-      margin-top: 10px;
-    }
+        nav a {
+            color: #ffd700;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
 
-    nav a {
-      color: #ffd700;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
+        nav a:hover {
+            text-decoration: underline;
+        }
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+        .gallery-item {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+        }
 
-    .gallery img {
-      width: 100%;
-      height: auto;
-      border-radius: 5px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
 
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
+        .gallery-item p {
+            margin: 10px;
+            color: #333;
+            font-weight: bold;
+        }
 
-    .gallery figcaption {
-      text-align: center;
-      margin-top: 10px;
-      font-size: 1em;
-      color: #003366;
-    }
-
-    footer {
-      background: #003366;
-      color: #fff;
-      text-align: center;
-      padding: 10px 0;
-      margin-top: 20px;
-    }
-
-    /* Fullscreen overlay */
-    .fullscreen {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    .fullscreen img {
-      max-width: 90%;
-      max-height: 90%;
-    }
-
-    .fullscreen .close, .fullscreen .arrow {
-      position: absolute;
-      color: white;
-      font-size: 2em;
-      cursor: pointer;
-    }
-
-    .fullscreen .close {
-      top: 20px;
-      right: 30px;
-    }
-
-    .fullscreen .arrow {
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    .fullscreen .arrow.left {
-      left: 20px;
-    }
-
-    .fullscreen .arrow.right {
-      right: 20px;
-    }
-  </style>
+        footer {
+            background: #003366;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Gallery</h1>
-    <p>Explore our custom 3D-printed creations!</p>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+    <header>
+        <h1>Gallery</h1>
+        <p>Explore our custom 3D-printed creations!</p>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-  <section>
-    <h2 style="text-align: center;">Our Creations</h2>
-    <div class="gallery">
-      <figure>
-        <img src="redwings_front.jpeg" alt="Custom Redwings Hockey Jersey - Front" onclick="openFullscreen(0)">
-        <figcaption>Custom Redwings Hockey Jersey - Front</figcaption>
-      </figure>
-      <figure>
-        <img src="redwings_back.jpeg" alt="Custom Redwings Hockey Jersey - Back" onclick="openFullscreen(1)">
-        <figcaption>Custom Redwings Hockey Jersey - Back</figcaption>
-      </figure>
-      <figure>
-        <img src="customnamekeychain.jpg" alt="Custom Name Keychain" onclick="openFullscreen(2)">
-        <figcaption>Custom Name Keychain</figcaption>
-      </figure>
-      <figure>
-        <img src="therockkeychain.jpg" alt="The Rock Keychain" onclick="openFullscreen(3)">
-        <figcaption>The Rock Keychain</figcaption>
-      </figure>
-      <figure>
-        <img src="angelheart.jpg" alt="Angel Heart Keychain" onclick="openFullscreen(4)">
-        <figcaption>Angel Heart Keychain</figcaption>
-      </figure>
-      <figure>
-        <img src="MontrealCanadienskeychain.jpg" alt="Montreal Canadiens Keychain" onclick="openFullscreen(5)">
-        <figcaption>Montreal Canadiens Keychain</figcaption>
-      </figure>
-      <figure>
-        <img src="dogkeychain.jpg" alt="Dog Keychain" onclick="openFullscreen(6)">
-        <figcaption>Dog Keychain</figcaption>
-      </figure>
-      <figure>
-        <img src="jesus.jpg" alt="Jesus Figurine" onclick="openFullscreen(7)">
-        <figcaption>Jesus Figurine</figcaption>
-      </figure>
-      <figure>
-        <img src="nlcustomcoordinatesjpg.jpg" alt="Custom Coordinates Keychain" onclick="openFullscreen(8)">
-        <figcaption>Custom Coordinates Keychain (Censored)</figcaption>
-      </figure>
-    </div>
-  </section>
+    <main>
+        <h2 style="text-align: center; margin-top: 20px;">Our Creations</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="redwings_front.jpg" alt="Custom Redwings Hockey Jersey - Front">
+                <p>Custom Redwings Hockey Jersey - Front</p>
+            </div>
+            <div class="gallery-item">
+                <img src="redwings_back.jpg" alt="Custom Redwings Hockey Jersey - Back">
+                <p>Custom Redwings Hockey Jersey - Back</p>
+            </div>
+            <div class="gallery-item">
+                <img src="customnamekeychain.jpg" alt="Custom Name Keychain">
+                <p>Custom Name Keychain</p>
+            </div>
+            <div class="gallery-item">
+                <img src="therockkeychain.jpg" alt="The Rock Keychain">
+                <p>The Rock Keychain</p>
+            </div>
+            <div class="gallery-item">
+                <img src="angelheart.jpg" alt="Angel Heart Keychain">
+                <p>Angel Heart Keychain</p>
+            </div>
+            <div class="gallery-item">
+                <img src="MontrealCanadienskeychain.jpg" alt="Montreal Canadiens Keychain">
+                <p>Montreal Canadiens Keychain</p>
+            </div>
+            <div class="gallery-item">
+                <img src="dogkeychain.jpg" alt="Dog Keychain">
+                <p>Dog Keychain</p>
+            </div>
+            <div class="gallery-item">
+                <img src="jesus.jpg" alt="Jesus Figurine">
+                <p>Jesus Figurine</p>
+            </div>
+            <div class="gallery-item">
+                <img src="nlcustomcoordinatesjpg.jpg" alt="Custom Coordinates Keychain (Censored)">
+                <p>Custom Coordinates Keychain (Censored)</p>
+            </div>
+        </div>
+    </main>
 
-  <div class="fullscreen" id="fullscreen">
-    <span class="close" onclick="closeFullscreen()">&times;</span>
-    <span class="arrow left" onclick="prevImage()">&#10094;</span>
-    <img id="fullscreenImg" src="">
-    <span class="arrow right" onclick="nextImage()">&#10095;</span>
-  </div>
-
-  <footer>
-    <p>&copy; 2024 DJ's Custom Prints. Proudly made in Newfoundland. All rights reserved.</p>
-  </footer>
-
-  <script>
-    const images = [
-      "redwings_front.jpeg",
-      "redwings_back.jpeg",
-      "customnamekeychain.jpg",
-      "therockkeychain.jpg",
-      "angelheart.jpg",
-      "MontrealCanadienskeychain.jpg",
-      "dogkeychain.jpg",
-      "jesus.jpg",
-      "nlcustomcoordinatesjpg.jpg"
-    ];
-    let currentIndex = 0;
-
-    function openFullscreen(index) {
-      currentIndex = index;
-      const fullscreen = document.getElementById('fullscreen');
-      const fullscreenImg = document.getElementById('fullscreenImg');
-      fullscreenImg.src = images[index];
-      fullscreen.style.display = 'flex';
-    }
-
-    function closeFullscreen() {
-      const fullscreen = document.getElementById('fullscreen');
-      fullscreen.style.display = 'none';
-    }
-
-    function prevImage() {
-      currentIndex = (currentIndex - 1 + images.length) % images.length;
-      document.getElementById('fullscreenImg').src = images[currentIndex];
-    }
-
-    function nextImage() {
-      currentIndex = (currentIndex + 1) % images.length;
-      document.getElementById('fullscreenImg').src = images[currentIndex];
-    }
-  </script>
+    <footer>
+        <p>&copy; 2024 DJ's Custom Prints. Proudly made in Newfoundland. All rights reserved.</p>
+    </footer>
 </body>
 </html>
