@@ -58,71 +58,6 @@
       font-size: 1.8em;
     }
 
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .gallery figure {
-      text-align: center;
-      margin: 0;
-    }
-
-    .gallery img {
-      max-width: 300px;
-      border: 2px solid #003366;
-      border-radius: 5px;
-      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-
-    .gallery figcaption {
-      margin-top: 10px;
-      font-size: 1em;
-      color: #003366;
-    }
-
-    .fullscreen {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    .fullscreen img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 10px;
-    }
-
-    .fullscreen:target {
-      display: flex;
-    }
-
-    .close {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      font-size: 2em;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
     footer {
       background: #003366;
       color: #fff;
@@ -138,10 +73,9 @@
     <h1>DJ's Custom Prints</h1>
     <p>Your one-stop shop for personalized 3D prints, proudly made in Newfoundland!</p>
     <nav>
-      <a href="#about">About</a>
-      <a href="#products">Products</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
@@ -160,44 +94,6 @@
       <li>• Event-Specific Gifts</li>
       <li>• And much more!</li>
     </ul>
-  </section>
-
-  <!-- Gallery Section -->
-  <section id="gallery">
-    <h2>Gallery</h2>
-    <div class="gallery">
-      <figure>
-        <a href="#fullscreen1">
-          <img src="redwings front.jpeg" alt="Custom Redwings Hockey Jersey - Front">
-        </a>
-        <figcaption>Custom Redwings Hockey Jersey - Front</figcaption>
-      </figure>
-      <figure>
-        <a href="#fullscreen2">
-          <img src="redwings back.jpeg" alt="Custom Redwings Hockey Jersey - Back">
-        </a>
-        <figcaption>Custom Redwings Hockey Jersey - Back</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- Fullscreen Modals -->
-  <div id="fullscreen1" class="fullscreen">
-    <a href="#gallery" class="close">&times;</a>
-    <img src="redwings front.jpeg" alt="Custom Redwings Hockey Jersey - Front">
-  </div>
-
-  <div id="fullscreen2" class="fullscreen">
-    <a href="#gallery" class="close">&times;</a>
-    <img src="redwings back.jpeg" alt="Custom Redwings Hockey Jersey - Back">
-  </div>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Have a question or need a custom order? Reach out to us:</p>
-    <p>Email: <a href="mailto:support@djscustomprints.ca">support@djscustomprints.ca</a></p>
-    <p>Follow us on social media for updates and new designs!</p>
   </section>
 
   <!-- Footer -->
