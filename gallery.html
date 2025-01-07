@@ -10,7 +10,8 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom, #e6f7ff, #ffffff);
+      background: #f0f8ff;
+      color: #333;
     }
 
     header {
@@ -45,35 +46,47 @@
       text-decoration: underline;
     }
 
-    .gallery {
+    section {
       padding: 20px;
-      margin: 0 auto;
+      margin: 20px auto;
       max-width: 1200px;
+      text-align: center;
+    }
+
+    section h2 {
+      color: #003366;
+      font-size: 1.8em;
+    }
+
+    .gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
     }
 
-    .gallery-item {
+    .gallery figure {
       background: #fff;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin: 0;
       padding: 10px;
-      text-align: center;
-      width: 200px;
-    }
-
-    .gallery-item img {
-      max-width: 100%;
-      border-radius: 5px;
-      cursor: pointer;
       transition: transform 0.2s;
     }
 
-    .gallery-item img:hover {
-      transform: scale(1.1);
+    .gallery figure:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    .gallery figcaption {
+      margin-top: 10px;
+      font-size: 1em;
+      color: #003366;
     }
 
     footer {
@@ -83,58 +96,10 @@
       padding: 10px 0;
       margin-top: 20px;
     }
-
-    /* Lightbox styling */
-    .lightbox {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      flex-direction: column;
-    }
-
-    .lightbox img {
-      max-width: 90%;
-      max-height: 80%;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-    }
-
-    .lightbox .close {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      font-size: 30px;
-      color: white;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .lightbox .arrow {
-      position: absolute;
-      top: 50%;
-      font-size: 50px;
-      color: white;
-      cursor: pointer;
-      transform: translateY(-50%);
-    }
-
-    .lightbox .arrow.left {
-      left: 20px;
-    }
-
-    .lightbox .arrow.right {
-      right: 20px;
-    }
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
     <h1>Gallery</h1>
     <p>Explore our custom 3D-printed creations!</p>
@@ -145,87 +110,56 @@
     </nav>
   </header>
 
-  <main>
-    <h2 style="text-align: center; margin-top: 20px;">Our Creations</h2>
+  <!-- Gallery Section -->
+  <section>
+    <h2>Our Creations</h2>
     <div class="gallery">
-      <div class="gallery-item">
-        <img src="redwings front.jpeg" alt="Custom Redwings Hockey Jersey - Front" data-index="0">
-        <p>Custom Redwings Hockey Jersey - Front</p>
-      </div>
-      <div class="gallery-item">
-        <img src="redwings back.jpeg" alt="Custom Redwings Hockey Jersey - Back" data-index="1">
-        <p>Custom Redwings Hockey Jersey - Back</p>
-      </div>
-      <div class="gallery-item">
-        <img src="customnamekeychain.jpg" alt="Custom Name Keychain" data-index="2">
-        <p>Custom Name Keychain</p>
-      </div>
-      <div class="gallery-item">
-        <img src="therockkeychain.jpg" alt="The Rock Keychain" data-index="3">
-        <p>The Rock Keychain</p>
-      </div>
-      <div class="gallery-item">
-        <img src="angelheart.jpg" alt="Angel Heart Keychain" data-index="4">
-        <p>Angel Heart Keychain</p>
-      </div>
-      <div class="gallery-item">
-        <img src="MontrealCanadienskeychain.jpg" alt="Montreal Canadiens Keychain" data-index="5">
-        <p>Montreal Canadiens Keychain</p>
-      </div>
-      <div class="gallery-item">
-        <img src="dogkeychain.jpg" alt="Dog Keychain" data-index="6">
-        <p>Dog Keychain</p>
-      </div>
-      <div class="gallery-item">
-        <img src="jesus.jpg" alt="Jesus Figurine" data-index="7">
-        <p>Jesus Figurine</p>
-      </div>
-      <div class="gallery-item">
-        <img src="dogkeychain1.jpg" alt="Dog Keychain (Alternate)" data-index="8">
-        <p>Dog Keychain (Alternate)</p>
-      </div>
+      <figure>
+        <img src="redwings front.jpeg" alt="Custom Redwings Hockey Jersey - Front">
+        <figcaption>Custom Redwings Hockey Jersey - Front</figcaption>
+      </figure>
+      <figure>
+        <img src="redwings back.jpeg" alt="Custom Redwings Hockey Jersey - Back">
+        <figcaption>Custom Redwings Hockey Jersey - Back</figcaption>
+      </figure>
+      <figure>
+        <img src="customnamekeychain.jpg" alt="Custom Name Keychain">
+        <figcaption>Custom Name Keychain</figcaption>
+      </figure>
+      <figure>
+        <img src="therockkeychain.jpg" alt="The Rock Keychain">
+        <figcaption>The Rock Keychain</figcaption>
+      </figure>
+      <figure>
+        <img src="angelheart.jpg" alt="Angel Heart Keychain">
+        <figcaption>Angel Heart Keychain</figcaption>
+      </figure>
+      <figure>
+        <img src="MontrealCanadienskeychain.jpg" alt="Montreal Canadiens Keychain">
+        <figcaption>Montreal Canadiens Keychain</figcaption>
+      </figure>
+      <figure>
+        <img src="dogkeychain.jpg" alt="Dog Keychain">
+        <figcaption>Dog Keychain</figcaption>
+      </figure>
+      <figure>
+        <img src="jesus.jpg" alt="Jesus Figurine">
+        <figcaption>Jesus Figurine</figcaption>
+      </figure>
+      <figure>
+        <img src="dogkeychain1.jpg" alt="Dog Keychain (Alternate)">
+        <figcaption>Dog Keychain (Alternate)</figcaption>
+      </figure>
+      <figure>
+        <img src="nlcustomcoordinatesjpg.jpg" alt="Custom Coordinates Keychain">
+        <figcaption>Custom Coordinates Keychain (Coordinates covered for privacy)</figcaption>
+      </figure>
     </div>
+  </section>
 
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-      <span class="close" onclick="closeLightbox()">&times;</span>
-      <span class="arrow left" onclick="prevImage()">&#8249;</span>
-      <img id="lightbox-img" src="" alt="">
-      <span class="arrow right" onclick="nextImage()">&#8250;</span>
-    </div>
-  </main>
-
+  <!-- Footer -->
   <footer>
     <p>&copy; 2024 DJ's Custom Prints. Proudly made in Newfoundland. All rights reserved.</p>
   </footer>
-
-  <script>
-    const images = document.querySelectorAll('.gallery-item img');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    let currentIndex = 0;
-
-    images.forEach((img, index) => {
-      img.addEventListener('click', () => {
-        lightbox.style.display = 'flex';
-        lightboxImg.src = img.src;
-        currentIndex = index;
-      });
-    });
-
-    function closeLightbox() {
-      lightbox.style.display = 'none';
-    }
-
-    function nextImage() {
-      currentIndex = (currentIndex + 1) % images.length;
-      lightboxImg.src = images[currentIndex].src;
-    }
-
-    function prevImage() {
-      currentIndex = (currentIndex - 1 + images.length) % images.length;
-      lightboxImg.src = images[currentIndex].src;
-    }
-  </script>
 </body>
 </html>
