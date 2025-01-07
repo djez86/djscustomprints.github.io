@@ -68,6 +68,7 @@
     .gallery-item img {
       max-width: 100%;
       border-radius: 5px;
+      cursor: pointer;
       transition: transform 0.2s;
     }
 
@@ -81,6 +82,55 @@
       text-align: center;
       padding: 10px 0;
       margin-top: 20px;
+    }
+
+    /* Lightbox styling */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      flex-direction: column;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    }
+
+    .lightbox .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .lightbox .arrow {
+      position: absolute;
+      top: 50%;
+      font-size: 50px;
+      color: white;
+      cursor: pointer;
+      transform: translateY(-50%);
+    }
+
+    .lightbox .arrow.left {
+      left: 20px;
+    }
+
+    .lightbox .arrow.right {
+      right: 20px;
     }
   </style>
 </head>
@@ -99,46 +149,83 @@
     <h2 style="text-align: center; margin-top: 20px;">Our Creations</h2>
     <div class="gallery">
       <div class="gallery-item">
-        <img src="redwings front.jpeg" alt="Custom Redwings Hockey Jersey - Front">
+        <img src="redwings front.jpeg" alt="Custom Redwings Hockey Jersey - Front" data-index="0">
         <p>Custom Redwings Hockey Jersey - Front</p>
       </div>
       <div class="gallery-item">
-        <img src="redwings back.jpeg" alt="Custom Redwings Hockey Jersey - Back">
+        <img src="redwings back.jpeg" alt="Custom Redwings Hockey Jersey - Back" data-index="1">
         <p>Custom Redwings Hockey Jersey - Back</p>
       </div>
       <div class="gallery-item">
-        <img src="customnamekeychain.jpg" alt="Custom Name Keychain">
+        <img src="customnamekeychain.jpg" alt="Custom Name Keychain" data-index="2">
         <p>Custom Name Keychain</p>
       </div>
       <div class="gallery-item">
-        <img src="therockkeychain.jpg" alt="The Rock Keychain">
+        <img src="therockkeychain.jpg" alt="The Rock Keychain" data-index="3">
         <p>The Rock Keychain</p>
       </div>
       <div class="gallery-item">
-        <img src="angelheart.jpg" alt="Angel Heart Keychain">
+        <img src="angelheart.jpg" alt="Angel Heart Keychain" data-index="4">
         <p>Angel Heart Keychain</p>
       </div>
       <div class="gallery-item">
-        <img src="MontrealCanadienskeychain.jpg" alt="Montreal Canadiens Keychain">
+        <img src="MontrealCanadienskeychain.jpg" alt="Montreal Canadiens Keychain" data-index="5">
         <p>Montreal Canadiens Keychain</p>
       </div>
       <div class="gallery-item">
-        <img src="dogkeychain.jpg" alt="Dog Keychain">
+        <img src="dogkeychain.jpg" alt="Dog Keychain" data-index="6">
         <p>Dog Keychain</p>
       </div>
       <div class="gallery-item">
-        <img src="jesus.jpg" alt="Jesus Figurine">
+        <img src="jesus.jpg" alt="Jesus Figurine" data-index="7">
         <p>Jesus Figurine</p>
       </div>
       <div class="gallery-item">
-        <img src="dogkeychain1.jpg" alt="Dog Keychain (Alternate)">
+        <img src="dogkeychain1.jpg" alt="Dog Keychain (Alternate)" data-index="8">
         <p>Dog Keychain (Alternate)</p>
       </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <span class="close" onclick="closeLightbox()">&times;</span>
+      <span class="arrow left" onclick="prevImage()">&#8249;</span>
+      <img id="lightbox-img" src="" alt="">
+      <span class="arrow right" onclick="nextImage()">&#8250;</span>
     </div>
   </main>
 
   <footer>
     <p>&copy; 2024 DJ's Custom Prints. Proudly made in Newfoundland. All rights reserved.</p>
   </footer>
+
+  <script>
+    const images = document.querySelectorAll('.gallery-item img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    let currentIndex = 0;
+
+    images.forEach((img, index) => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+        currentIndex = index;
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.style.display = 'none';
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      lightboxImg.src = images[currentIndex].src;
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      lightboxImg.src = images[currentIndex].src;
+    }
+  </script>
 </body>
 </html>
