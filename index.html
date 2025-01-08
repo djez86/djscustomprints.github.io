@@ -4,32 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DJ's Custom Prints</title>
+  <link rel="icon" href="favicon.png" type="image/png">
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: white; /* Matches the white in the image */
-      background-image: url('newfoundland1.jpg'); /* Updated image name */
-      background-repeat: no-repeat;
-      background-size: contain; /* Ensures the full image is visible */
-      background-position: center;
-      background-attachment: fixed; /* Keeps the background in place while scrolling */
-      min-height: 100vh; /* Ensures the body takes the full height of the viewport */
-      display: flex;
-      flex-direction: column;
+      background: #ffffff;
+      color: #333;
     }
 
     header {
       background: #003366;
-      color: white;
+      color: #fff;
       padding: 20px 10px;
       text-align: center;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2.5em;
+      font-size: 3em;
+      font-weight: bold;
     }
 
     header p {
@@ -37,42 +32,82 @@
       font-size: 1.2em;
     }
 
+    nav {
+      margin-top: 10px;
+    }
+
     nav a {
       color: #ffd700;
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
+      font-size: 1.1em;
     }
 
     nav a:hover {
       text-decoration: underline;
     }
 
-    main {
+    .container {
       text-align: center;
-      padding: 20px;
-      flex: 1; /* Pushes footer to the bottom */
+      padding: 40px 20px;
     }
 
     .section {
-      background: rgba(255, 255, 255, 0.8); /* Slight transparency */
-      border-radius: 10px;
-      padding: 20px;
+      background: rgba(255, 255, 255, 0.9);
       margin: 20px auto;
-      max-width: 800px;
+      padding: 20px;
+      border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+    }
+
+    .section h2 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      color: #fff;
+      background: #ffd700;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .cta-button:hover {
+      background: #ffcc00;
     }
 
     footer {
       background: #003366;
-      color: white;
+      color: #fff;
       text-align: center;
       padding: 10px 0;
-      margin-top: auto; /* Ensures footer sticks to the bottom */
+      margin-top: 20px;
+    }
+
+    .background-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.2;
+      background: url('newfoundland1.jpg') center/cover no-repeat;
     }
   </style>
 </head>
 <body>
+  <div class="background-image"></div>
+
   <header>
     <h1>DJ's Custom Prints</h1>
     <p>Your one-stop shop for personalized 3D prints, proudly made in Newfoundland!</p>
@@ -83,13 +118,14 @@
     </nav>
   </header>
 
-  <main>
-    <div class="section">
+  <div class="container">
+    <section class="section">
       <h2>ABOUT US</h2>
       <p>Welcome to DJ's Custom Prints! We are proud to be a Newfoundland-based business crafting top-notch, personalized 3D-printed items tailored to your needs. Whether you're looking for unique gifts, custom keychains, or decorations, we bring your ideas to life.</p>
-    </div>
+      <a href="gallery.html" class="cta-button">Explore Our Gallery</a>
+    </section>
 
-    <div class="section">
+    <section class="section">
       <h2>OUR PRODUCTS</h2>
       <ul style="list-style: none; padding: 0; font-size: 1.2em;">
         <li>Custom Keychains</li>
@@ -97,8 +133,9 @@
         <li>Event-Specific Gifts</li>
         <li>And much more!</li>
       </ul>
-    </div>
-  </main>
+      <a href="contact.html" class="cta-button">Get in Touch</a>
+    </section>
+  </div>
 
   <footer>
     <p>&copy; 2024 DJ's Custom Prints. Proudly made in Newfoundland. All rights reserved.</p>
