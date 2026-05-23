@@ -45,6 +45,8 @@
       text-align: center;
       padding: 20px;
       position: relative;
+      /* Added bottom padding to ensure content doesn't get hidden behind the fixed footer */
+      padding-bottom: 90px; 
     }
 
     .newfoundland {
@@ -68,7 +70,6 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    /* Clean upgrade: Box lifts slightly on hover */
     .content-box:hover {
       transform: translateY(-3px);
       box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
@@ -98,6 +99,27 @@
       transform: scale(0.97);
     }
 
+    /* Custom Facebook style for her independent button link */
+    .fb-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #1877f2; 
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .fb-button:hover {
+      background-color: #145dbf; 
+    }
+
+    .fb-button:active {
+      transform: scale(0.97);
+    }
+
     footer {
       background-color: #003366;
       color: white;
@@ -122,6 +144,7 @@
 
   <main>
     <img src="newfoundland1.jpg" alt="Newfoundland Outline" class="newfoundland">
+    
     <div class="content-box">
       <h2>ABOUT US</h2>
       <p>Welcome to DJ's Custom Prints! We are proud to be a Newfoundland-based business crafting top-notch, personalized 3D-printed items tailored to your needs. Whether you're looking for unique gifts, custom keychains, or decorations, we bring your ideas to life.</p>
@@ -137,6 +160,13 @@
         And much more!
       </p>
       <a href="contact.html" class="button">Get in Touch</a>
+    </div>
+
+    <div class="content-box" style="border-top: 4px solid #1877f2;">
+      <h2 style="color: #003366;">SKY'S CUSTOM CREATIONS</h2>
+      <p style="font-weight: bold; color: #555; font-size: 0.95rem; letter-spacing: 0.5px; margin-bottom: 10px;">LOCALLY HANDMADE | EST. 03.2023</p>
+      <p>Looking for high-quality custom apparel, custom t-shirts, or personalized vinyl craft designs? Check out our partner business! Operating independently right here in Newfoundland, specializing in beautiful, custom Cricut apparel designs built to last.</p>
+      <a href="https://www.facebook.com/share/18nuT9Tweq/" target="_blank" class="fb-button">Visit Her Facebook Page</a>
     </div>
   </main>
 
