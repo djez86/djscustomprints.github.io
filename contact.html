@@ -173,6 +173,171 @@
       <h2>GET IN TOUCH</h2>
       <p>Have an idea for a custom apparel design, personalized keychain, or specialty 3D print? Drop your details below and let's bring it to life!</p>
       
+      <form action="https://formsubmit.co/djbursey680@gmail.com" method="POST">
+        
+        <input type="hidden" name="_captcha" value="false">
+        
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="yourname@email.com" required>
+
+        <label for="subject">What are you looking to create?</label>
+        <input type="text" id="subject" name="subject" placeholder="e.g., Custom Apparel, Name Keychain, Gift Idea" required>
+
+        <label for="message">Project Details</label>
+        <textarea id="message" name="message" placeholder="Describe your design, sizing, colors, or any custom text you want included..." required></textarea>
+
+        <button type="submit" class="submit-btn">Send Custom Request</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 DJ's Custom Prints. Proudly made in Newfoundland. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+    }
+
+    nav a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    main {
+      text-align: center;
+      padding: 20px;
+      position: relative;
+      margin-bottom: 80px;
+    }
+
+    .newfoundland {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: -1;
+      opacity: 0.1;
+      width: 90%; 
+      max-width: 800px;
+    }
+
+    .content-box {
+      background-color: white;
+      border-radius: 10px;
+      padding: 30px;
+      margin: 20px auto;
+      max-width: 600px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .content-box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    }
+
+    .content-box h2 {
+      margin-top: 0;
+      text-align: center;
+      color: #003366;
+    }
+
+    .content-box p {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #555;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #003366;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: Arial, sans-serif;
+      box-sizing: border-box;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #003366;
+      box-shadow: 0 0 5px rgba(0, 51, 102, 0.3);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #00264d; 
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #001a33; 
+    }
+
+    .submit-btn:active {
+      transform: scale(0.98);
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>DJ's Custom Prints</h1>
+    <p>Your one-stop shop for personalized 3D prints, proudly made in Newfoundland!</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <img src="newfoundland1.jpg" alt="Newfoundland Outline" class="newfoundland">
+    
+    <div class="content-box">
+      <h2>GET IN TOUCH</h2>
+      <p>Have an idea for a custom apparel design, personalized keychain, or specialty 3D print? Drop your details below and let's bring it to life!</p>
+      
       <form action="https://formspree.io/f/your_form_id_here" method="POST">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" placeholder="Your Name" required>
