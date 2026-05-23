@@ -45,7 +45,7 @@
       text-align: center;
       padding: 20px;
       position: relative;
-      /* Added bottom padding to ensure content doesn't get hidden behind the fixed footer */
+      /* Ensuring extra space so the text clears the floating footer bar */
       padding-bottom: 90px; 
     }
 
@@ -64,6 +64,130 @@
       background-color: white;
       border-radius: 10px;
       padding: 20px;
+      margin: 20px auto;
+      max-width: 800px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .content-box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    }
+
+    .content-box h2 {
+      margin-top: 0;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #00264d; 
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .button:hover {
+      background-color: #001a33; 
+    }
+
+    .button:active {
+      transform: scale(0.97);
+    }
+
+    /* Custom Facebook style for her link button */
+    .fb-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #1877f2; 
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .fb-button:hover {
+      background-color: #145dbf; 
+    }
+
+    .fb-button:active {
+      transform: scale(0.97);
+    }
+
+    /* Styled image container for her brand logo */
+    .partner-logo {
+      width: 100%;
+      max-width: 220px;
+      height: auto;
+      margin: 15px auto;
+      display: block;
+      border-radius: 8px;
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>DJ's Custom Prints</h1>
+    <p>Your one-stop shop for personalized 3D prints, proudly made in Newfoundland!</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <img src="newfoundland1.jpg" alt="Newfoundland Outline" class="newfoundland">
+    
+    <div class="content-box">
+      <h2>ABOUT US</h2>
+      <p>Welcome to DJ's Custom Prints! We are proud to be a Newfoundland-based business crafting top-notch, personalized 3D-printed items tailored to your needs. Whether you're looking for unique gifts, custom keychains, or decorations, we bring your ideas to life.</p>
+      <a href="gallery.html" class="button">Explore Our Gallery</a>
+    </div>
+
+    <div class="content-box">
+      <h2>OUR PRODUCTS</h2>
+      <p>
+        Custom Keychains<br>
+        Personalized Ornaments<br>
+        Event-Specific Gifts<br>
+        And much more!
+      </p>
+      <a href="contact.html" class="button">Get in Touch</a>
+    </div>
+
+    <div class="content-box" style="border-top: 4px solid #1877f2;">
+      <h2 style="color: #003366;">SKY'S CUSTOM CREATIONS</h2>
+      
+      <img src="2083.png" alt="Sky's Custom Creations Logo" class="partner-logo">
+
+      <p style="font-weight: bold; color: #555; font-size: 0.95rem; letter-spacing: 0.5px; margin-bottom: 10px;">LOCALLY HANDMADE | EST. 03.2023</p>
+      <p>Looking for high-quality custom apparel, custom t-shirts, or personalized vinyl craft designs? Check out our partner business! Operating independently right here in Newfoundland, specializing in beautiful, custom Cricut apparel designs built to last.</p>
+      <a href="https://www.facebook.com/share/18nuT9Tweq/" target="_blank" class="fb-button">Visit Her Facebook Page</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 DJ's Custom Prints. Proudly made in Newfoundland. All rights reserved.</p>
+  </footer>
+</body>
+</html>
       margin: 20px auto;
       max-width: 800px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
