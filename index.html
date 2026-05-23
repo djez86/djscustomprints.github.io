@@ -37,11 +37,19 @@
       border-radius: 5px; font-weight: bold; position: relative; z-index: 2;
     }
 
-    /* Fixed: Set to 0.95 opacity so her background logo is crisp, clear, and dark */
     .sky-watermark {
       position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
       z-index: -1; opacity: 0.95; width: 85%; max-width: 280px; height: auto;
       pointer-events: none;
+    }
+    
+    /* New styling rule to make the descriptive text high-contrast and highly readable */
+    .readable-text {
+      color: #000000 !important;
+      font-weight: 800 !important;
+      font-size: 1rem;
+      line-height: 1.5;
+      text-shadow: -2px -2px 4px #ffffff, 2px -2px 4px #ffffff, -2px 2px 4px #ffffff, 2px 2px 4px #ffffff;
     }
     
     footer { background-color: #003366; color: white; text-align: center; padding: 10px; position: fixed; bottom: 0; width: 100%; }
@@ -77,8 +85,10 @@
     <div class="content-box" style="border-top: 4px solid #1877f2;">
       <img src="sky-logo.png" alt="Sky's Custom Creations Logo" class="sky-watermark">
       <h2 style="color: #003366;">SKY'S CUSTOM CREATIONS</h2>
-      <p style="font-weight: bold; color: #555; font-size: 0.95rem; letter-spacing: 0.5px; margin-bottom: 10px;">LOCALLY HANDMADE | EST. 03.2023</p>
-      <p>Looking for high-quality custom apparel, custom t-shirts, or personalized vinyl craft designs? Check out our partner business! Operating independently right here in Newfoundland, specializing in beautiful, custom Cricut apparel designs built to last.</p>
+      <p style="font-weight: bold; color: #111; font-size: 0.95rem; letter-spacing: 0.5px; margin-bottom: 10px; text-shadow: 1px 1px 2px #fff;">LOCALLY HANDMADE | EST. 03.2023</p>
+      
+      <p class="readable-text">Looking for high-quality custom apparel, custom t-shirts, or personalized vinyl craft designs? Check out our partner business! Operating independently right here in Newfoundland, specializing in beautiful, custom Cricut apparel designs built to last.</p>
+      
       <a href="https://www.facebook.com/share/18nuT9Tweq/" target="_blank" class="fb-button">Visit Her Facebook Page</a>
     </div>
   </main>
