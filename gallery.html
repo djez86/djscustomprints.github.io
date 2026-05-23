@@ -6,6 +6,11 @@
   <title>Gallery - DJ's Custom Prints</title>
   <link rel="icon" href="images/favicon-16x16.png" type="image/png">
   <style>
+    /* Makes jumping around the page look smooth instead of cutting instantly */
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -13,11 +18,16 @@
       background: linear-gradient(to bottom, #e6f7ff, #ffffff);
     }
 
+    /* Matches your homepage sticky header perfectly */
     header {
       background: #003366;
       color: #fff;
       padding: 20px 10px;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
 
     header h1 {
@@ -149,39 +159,39 @@
     <h2 style="text-align: center; margin-top: 20px;">Our Creations</h2>
     <div class="gallery">
       <div class="gallery-item">
-        <img src="images/redwings front.jpeg" alt="Custom Redwings Hockey Jersey - Front" data-index="0">
+        <img src="images/redwings front.jpeg" alt="Custom Redwings Hockey Jersey - Front" data-index="0" loading="lazy">
         <p>Custom Redwings Hockey Jersey - Front</p>
       </div>
       <div class="gallery-item">
-        <img src="images/redwings back.jpeg" alt="Custom Redwings Hockey Jersey - Back" data-index="1">
+        <img src="images/redwings back.jpeg" alt="Custom Redwings Hockey Jersey - Back" data-index="1" loading="lazy">
         <p>Custom Redwings Hockey Jersey - Back</p>
       </div>
       <div class="gallery-item">
-        <img src="images/therockkeychain.jpg" alt="The Rock Keychain" data-index="2">
+        <img src="images/therockkeychain.jpg" alt="The Rock Keychain" data-index="2" loading="lazy">
         <p>The Rock Keychain</p>
       </div>
       <div class="gallery-item">
-        <img src="images/angelheart.jpg" alt="Angel Heart Keychain" data-index="3">
+        <img src="images/angelheart.jpg" alt="Angel Heart Keychain" data-index="3" loading="lazy">
         <p>Angel Heart Keychain</p>
       </div>
       <div class="gallery-item">
-        <img src="images/MontrealCanadienskeychain.jpg" alt="Montreal Canadiens Keychain" data-index="4">
+        <img src="images/MontrealCanadienskeychain.jpg" alt="Montreal Canadiens Keychain" data-index="4" loading="lazy">
         <p>Montreal Canadiens Keychain</p>
       </div>
       <div class="gallery-item">
-        <img src="images/dogkeychain.jpg" alt="Dog Keychain" data-index="5">
+        <img src="images/dogkeychain.jpg" alt="Dog Keychain" data-index="5" loading="lazy">
         <p>Dog Keychain</p>
       </div>
       <div class="gallery-item">
-        <img src="images/jesus.jpg" alt="Jesus Figurine" data-index="6">
+        <img src="images/jesus.jpg" alt="Jesus Figurine" data-index="6" loading="lazy">
         <p>Jesus Figurine</p>
       </div>
       <div class="gallery-item">
-        <img src="images/dogkeychain1.jpg" alt="Dog Keychain (Alternate)" data-index="7">
+        <img src="images/dogkeychain1.jpg" alt="Dog Keychain (Alternate)" data-index="7" loading="lazy">
         <p>Dog Keychain (Alternate)</p>
       </div>
       <div class="gallery-item">
-        <img src="images/nlcustomcoordinatesjpg.jpg" alt="Custom Coordinates Keychain (Censored)" data-index="8">
+        <img src="images/nlcustomcoordinatesjpg.jpg" alt="Custom Coordinates Keychain (Censored)" data-index="8" loading="lazy">
         <p>Custom Coordinates Keychain (Censored)</p>
       </div>
     </div>
