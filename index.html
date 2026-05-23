@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DJ's Custom Prints</title>
-  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="icon" href="favicon-16x16.png" type="image/png">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -33,9 +33,12 @@
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
+      transition: color 0.3s ease;
     }
 
+    /* UPGRADE: Smooth underline transition when hovering over links */
     nav a:hover {
+      color: #fff;
       text-decoration: underline;
     }
 
@@ -52,10 +55,11 @@
       transform: translateX(-50%);
       z-index: -1;
       opacity: 0.1;
-      width: 90%; /* Adjusted to make it smaller */
+      width: 90%; 
       max-width: 800px;
     }
 
+    /* UPGRADE: Content boxes now have a smooth lift effect */
     .content-box {
       background-color: white;
       border-radius: 10px;
@@ -63,7 +67,86 @@
       margin: 20px auto;
       max-width: 800px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
+    .content-box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .content-box h2 {
+      margin-top: 0;
+    }
+
+    /* UPGRADE: Interactive buttons that shrink slightly on press */
+    .button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #00264d; 
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .button:hover {
+      background-color: #001a33; 
+    }
+
+    .button:active {
+      transform: scale(0.97);
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>DJ's Custom Prints</h1>
+    <p>Your one-stop shop for personalized 3D prints, proudly made in Newfoundland!</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <img src="newfoundland1.jpg" alt="Newfoundland Outline" class="newfoundland">
+    <div class="content-box">
+      <h2>ABOUT US</h2>
+      <p>Welcome to DJ's Custom Prints! We are proud to be a Newfoundland-based business crafting top-notch, personalized 3D-printed items tailored to your needs. Whether you're looking for unique gifts, custom keychains, or decorations, we bring your ideas to life.</p>
+      <a href="gallery.html" class="button">Explore Our Gallery</a>
+    </div>
+
+    <div class="content-box">
+      <h2>OUR PRODUCTS</h2>
+      <p>
+        Custom Keychains<br>
+        Personalized Ornaments<br>
+        Event-Specific Gifts<br>
+        And much more!
+      </p>
+      <a href="contact.html" class="button">Get in Touch</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 DJ's Custom Prints. Proudly made in Newfoundland. All rights reserved.</p>
+  </footer>
+</body>
+</html>
 
     .content-box h2 {
       margin-top: 0;
