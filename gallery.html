@@ -15,16 +15,14 @@
     nav a { color: #ffd700; text-decoration: none; margin: 0 15px; font-weight: bold; }
     nav a:hover { text-decoration: underline; }
 
-    /* Gallery Section Styles */
     .gallery-section { margin-top: 40px; }
     .gallery { padding: 20px; margin: 0 auto; max-width: 1200px; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
     .gallery-item { background: #fff; border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px; text-align: center; width: 200px; }
-    .gallery-item img { max-width: 100%; border-radius: 5px; cursor: pointer; transition: transform 0.2s; }
+    .gallery-item img { max-width: 100%; height: 150px; object-fit: cover; border-radius: 5px; cursor: pointer; transition: transform 0.2s; }
     .gallery-item img:hover { transform: scale(1.1); }
     
     footer { background: #003366; color: #fff; text-align: center; padding: 10px 0; margin-top: 40px; }
 
-    /* Lightbox */
     .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); justify-content: center; align-items: center; z-index: 1000; flex-direction: column; }
     .lightbox img { max-width: 90%; max-height: 80%; border-radius: 10px; box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); }
     .lightbox .close { position: absolute; top: 20px; right: 30px; font-size: 30px; color: white; cursor: pointer; font-weight: bold; }
@@ -48,16 +46,22 @@
     <div class="gallery-section">
       <h2 style="text-align: center;">3D Prints</h2>
       <div class="gallery">
-        <div class="gallery-item"><img src="images/redwings front.jpeg" alt="Jersey Front" data-index="0"></div>
-        <div class="gallery-item"><img src="images/therockkeychain.jpg" alt="Rock Keychain" data-index="1"></div>
-        </div>
+        <div class="gallery-item"><img src="images/redwings front.jpeg" alt="Jersey Front"><p>Redwings Front</p></div>
+        <div class="gallery-item"><img src="images/therockkeychain.jpg" alt="Rock Keychain"><p>Rock Keychain</p></div>
+        <div class="gallery-item"><img src="images/angelheart.jpg" alt="Angel Heart"><p>Angel Heart</p></div>
+        <div class="gallery-item"><img src="images/MontrealCanadienskeychain.jpg" alt="Canadiens"><p>Canadiens</p></div>
+        <div class="gallery-item"><img src="images/dogkeychain.jpg" alt="Dog"><p>Dog</p></div>
+        <div class="gallery-item"><img src="images/jesus.jpg" alt="Jesus"><p>Jesus</p></div>
+        <div class="gallery-item"><img src="images/dogkeychain1.jpg" alt="Dog 2"><p>Dog 2</p></div>
+        <div class="gallery-item"><img src="images/nlcustomcoordinatesjpg.jpg" alt="Coords"><p>Coords</p></div>
+      </div>
     </div>
 
     <div class="gallery-section">
       <h2 style="text-align: center;">Cricut Creations</h2>
       <div class="gallery">
-        <div class="gallery-item"><img src="images/uncle-steve-card.jpg" alt="Birthday Card" data-index="2"></div>
-        </div>
+        <div class="gallery-item"><img src="images/your-card-image-name.jpg" alt="Birthday Card"><p>Birthday Card</p></div>
+      </div>
     </div>
 
     <div class="lightbox" id="lightbox">
@@ -73,7 +77,7 @@
   </footer>
 
   <script>
-    const images = document.querySelectorAll('.gallery img'); // Selects all images inside any .gallery div
+    const images = document.querySelectorAll('.gallery img');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     let currentIndex = 0;
