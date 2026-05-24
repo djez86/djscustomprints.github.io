@@ -16,20 +16,21 @@
     nav a { color: #ffd700; text-decoration: none; margin: 0 15px; font-weight: bold; }
     nav a:hover { text-decoration: underline; }
 
-    .gallery-section { margin-top: 40px; padding-bottom: 20px; }
+    .gallery-section { margin-top: 40px; padding: 0 20px; }
+    .section-title { text-align: center; color: #003366; margin-bottom: 20px; }
     
     /* Horizontal Slider Layout */
     .gallery { 
       display: flex; 
       overflow-x: auto; 
       gap: 20px; 
-      padding: 20px; 
+      padding-bottom: 20px; 
       scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+      -webkit-overflow-scrolling: touch;
     }
     
     .gallery-item { 
-      flex: 0 0 200px; /* Forces images to be side-by-side */
+      flex: 0 0 200px; 
       background: #fff; 
       border: 1px solid #ccc; 
       border-radius: 5px; 
@@ -72,21 +73,21 @@
 
   <main>
     <div class="gallery-section">
-      <h2 style="text-align: center;">3D Prints</h2>
+      <h2 class="section-title">3D Prints</h2>
       <div class="gallery">
-        <div class="gallery-item"><img src="images/redwings front.jpeg" alt="Jersey Front"><p>Redwings Front</p></div>
-        <div class="gallery-item"><img src="images/therockkeychain.jpg" alt="Rock Keychain"><p>Rock Keychain</p></div>
-        <div class="gallery-item"><img src="images/angelheart.jpg" alt="Angel Heart"><p>Angel Heart</p></div>
-        <div class="gallery-item"><img src="images/MontrealCanadienskeychain.jpg" alt="Canadiens"><p>Canadiens</p></div>
-        <div class="gallery-item"><img src="images/dogkeychain.jpg" alt="Dog"><p>Dog</p></div>
-        <div class="gallery-item"><img src="images/jesus.jpg" alt="Jesus"><p>Jesus</p></div>
-        <div class="gallery-item"><img src="images/dogkeychain1.jpg" alt="Dog 2"><p>Dog 2</p></div>
-        <div class="gallery-item"><img src="images/nlcustomcoordinatesjpg.jpg" alt="Coords"><p>Coords</p></div>
+        <div class="gallery-item"><img src="images/3d prints/redwings front.jpeg" alt="Jersey Front"><p>Redwings Front</p></div>
+        <div class="gallery-item"><img src="images/3d prints/therockkeychain.jpg" alt="Rock Keychain"><p>Rock Keychain</p></div>
+        <div class="gallery-item"><img src="images/3d prints/angelheart.jpg" alt="Angel Heart"><p>Angel Heart</p></div>
+        <div class="gallery-item"><img src="images/3d prints/MontrealCanadienskeychain.jpg" alt="Canadiens"><p>Canadiens</p></div>
+        <div class="gallery-item"><img src="images/3d prints/dogkeychain.jpg" alt="Dog"><p>Dog</p></div>
+        <div class="gallery-item"><img src="images/3d prints/jesus.jpg" alt="Jesus"><p>Jesus</p></div>
+        <div class="gallery-item"><img src="images/3d prints/dogkeychain1.jpg" alt="Dog 2"><p>Dog 2</p></div>
+        <div class="gallery-item"><img src="images/3d prints/nlcustomcoordinatesjpg.jpg" alt="Coords"><p>Coords</p></div>
       </div>
     </div>
 
     <div class="gallery-section">
-      <h2 style="text-align: center;">Cricut Creations</h2>
+      <h2 class="section-title">Cricut Creations</h2>
       <div class="gallery">
         <div class="gallery-item"><img src="images/your-card-image-name.jpg" alt="Birthday Card"><p>Birthday Card</p></div>
       </div>
