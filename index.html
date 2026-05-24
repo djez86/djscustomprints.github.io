@@ -8,43 +8,41 @@
     body { 
         font-family: 'Segoe UI', sans-serif; 
         margin: 0; padding: 0; background-color: #f4f7f6; color: #333; 
-        min-height: 100vh; display: flex; flex-direction: column;
     }
     
     header { 
         background-color: #003366; color: white; text-align: center; 
-        padding: 40px 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        padding: 30px 20px;
     }
-    header h1 { margin: 0; font-size: 2rem; letter-spacing: 1px; }
+    header h1 { margin: 0; font-size: 1.8rem; }
     
-    nav { margin-top: 20px; }
-    nav a { color: #ffcc00; text-decoration: none; margin: 0 15px; font-weight: bold; }
+    nav { margin-top: 15px; }
+    nav a { color: #ffcc00; text-decoration: none; margin: 0 10px; font-weight: bold; font-size: 0.9rem; }
     
-    main { 
-        flex: 1; padding: 20px; max-width: 700px; margin: 0 auto; width: 100%; box-sizing: border-box;
-    }
+    main { padding: 20px; max-width: 700px; margin: 0 auto; }
     
     .content-box {
-        background-color: white; border-radius: 15px; padding: 30px; 
-        margin-bottom: 30px; /* This adds the space between boxes */
-        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        line-height: 1.7;
+        background-color: white; border-radius: 12px; padding: 25px; 
+        margin-bottom: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
     
-    h2 { color: #003366; margin-top: 0; border-bottom: 2px solid #ffcc00; display: inline-block; padding-bottom: 5px; }
+    h2 { color: #003366; margin-top: 0; font-size: 1.3rem; border-bottom: 2px solid #ffcc00; display: inline-block; padding-bottom: 3px; }
     
     ul { padding-left: 20px; margin: 15px 0; }
-    li { margin-bottom: 10px; }
+    li { margin-bottom: 8px; }
     
     .button {
-        display: inline-block; margin-top: 15px; padding: 15px 30px;
+        display: inline-block; margin-top: 15px; padding: 12px 20px;
         background-color: #003366; color: white; text-decoration: none;
-        border-radius: 8px; font-weight: bold; transition: 0.3s;
+        border-radius: 6px; font-weight: bold; font-size: 0.9rem;
     }
+    
+    .partner-section { text-align: center; }
+    .partner-logo { max-width: 150px; margin-bottom: 10px; }
     
     footer { 
         background-color: #002244; color: #ccc; text-align: center; 
-        padding: 20px; font-size: 0.85rem; margin-top: 20px;
+        padding: 20px; font-size: 0.8rem; margin-top: 20px;
     }
   </style>
 </head>
@@ -61,7 +59,6 @@
     <div class="content-box">
       <h2>ABOUT US</h2>
       <p>Welcome to DJ's Custom Prints. Based in Newfoundland, we specialize in high-quality 3D printing and custom apparel, bringing your unique ideas to life with precision and care.</p>
-      <p>Every piece is made locally with a focus on quality and detail. From hand-painting 3D prints to custom garments, we ensure everything we make is built to last.</p>
       <a href="gallery.html" class="button">Explore Our Gallery</a>
     </div>
 
@@ -74,6 +71,12 @@
         <li>Personalized Ornaments & Keychains</li>
       </ul>
       <a href="contact.html" class="button">Request a Quote</a>
+    </div>
+
+    <div class="content-box partner-section">
+      <h2>SKY'S CUSTOM CREATIONS</h2>
+      <p>Looking for high-quality custom apparel, custom t-shirts, or personalized vinyl craft designs? Check out our partner business!</p>
+      <a href="https://www.facebook.com/your-partner-link" class="button" style="background-color: #0066cc;">Visit Her Facebook Page</a>
     </div>
   </main>
 
