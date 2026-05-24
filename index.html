@@ -23,14 +23,15 @@
     nav a { color: #ffcc00; text-decoration: none; margin: 0 15px; font-weight: bold; }
     nav a:hover { color: white; text-decoration: underline; }
     
-    main { text-align: center; padding: 20px; position: relative; padding-bottom: 90px; }
+    /* Added more bottom padding so the fixed footer never overlaps content on mobile */
+    main { text-align: center; padding: 20px; position: relative; padding-bottom: 120px; }
     
     .newfoundland {
       position: absolute; top: 0; left: 50%; transform: translateX(-50%);
       z-index: -1; opacity: 0.1; width: 90%; max-width: 800px;
     }
     
-    /* Changed background to transparent and removed shadows to let the map show through */
+    /* Clean transparent content boxes */
     .content-box {
       background-color: transparent; border-radius: 10px; padding: 20px; margin: 20px auto;
       max-width: 800px;
@@ -65,7 +66,7 @@
       margin-top: 15px;
     }
 
-    /* Centered product list with neat spacing */
+    /* Centered product list layout */
     .product-list {
       list-style-type: none;
       padding: 0;
@@ -123,7 +124,7 @@
       <a href="contact.html" class="button">Get in Touch</a>
     </div>
 
-    <div class="content-box" style="border-top: 4px solid #1877f2;">
+    <div class="content-box">
       <img src="images/sky-logo.png" alt="Sky's Custom Creations Logo" class="sky-logo-badge">
       <h2 style="color: #003366; margin-top: 5px;">SKY'S CUSTOM CREATIONS</h2>
       <p style="font-weight: bold; color: #555; font-size: 0.9rem; letter-spacing: 1px; margin-bottom: 15px;">LOCALLY HANDMADE | EST. 03.2023</p>
