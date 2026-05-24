@@ -23,15 +23,16 @@
     nav a { color: #ffcc00; text-decoration: none; margin: 0 15px; font-weight: bold; }
     nav a:hover { color: white; text-decoration: underline; }
     
-    /* Added more bottom padding so the fixed footer never overlaps content on mobile */
+    /* Bottom padding stops the fixed footer from blocking mobile content */
     main { text-align: center; padding: 20px; position: relative; padding-bottom: 120px; }
     
+    /* Background watermark settings */
     .newfoundland {
-      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-      z-index: -1; opacity: 0.1; width: 90%; max-width: 800px;
+      position: absolute; top: 20px; left: 50%; transform: translateX(-50%);
+      z-index: -1; opacity: 0.05; width: 90%; max-width: 500px;
     }
     
-    /* Clean transparent content boxes */
+    /* Transparent content layout */
     .content-box {
       background-color: transparent; border-radius: 10px; padding: 20px; margin: 20px auto;
       max-width: 800px;
@@ -66,7 +67,7 @@
       margin-top: 15px;
     }
 
-    /* Centered product list layout */
+    /* Centered layout for product list items */
     .product-list {
       list-style-type: none;
       padding: 0;
@@ -101,7 +102,7 @@
   </header>
 
   <main>
-    <img src="images/newfoundland1.jpg" alt="Newfoundland Outline" class="newfoundland">
+    <img src="images/Newfoundland1.jpg" alt="Newfoundland Outline" class="newfoundland">
     
     <div class="content-box">
       <h2>ABOUT THE MAKER</h2>
