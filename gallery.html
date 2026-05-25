@@ -1,75 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gallery - DJ's Custom Prints</title>
+
   <link rel="icon" href="images/favicon-16x16.png" type="image/png">
+
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
-    
-    /* HOMEPAGE HEADER/NAV STYLES */
-    header { 
-      background-color: #003366; 
-      color: white; 
-      text-align: center; 
-      padding: 20px 0; 
-      position: sticky; 
-      top: 0; 
-      z-index: 1000; 
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    /* HEADER */
+    header {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 20px 15px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
       box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
-    header h1 { margin: 0; }
-    nav { margin-top: 10px; }
-    nav a { color: #ffcc00; text-decoration: none; margin: 0 15px; font-weight: bold; }
-    nav a:hover { color: white; text-decoration: underline; }
-    
-    /* HOMEPAGE FOOTER STYLE */
-    footer { background-color: #003366; color: white; text-align: center; padding: 10px; position: fixed; bottom: 0; width: 100%; z-index: 999; }
 
-    /* GALLERY CONTENT STYLING */
-    main { text-align: center; padding: 20px; padding-bottom: 90px; }
-    .gallery-section { margin-top: 20px; }
-    .section-title { color: #003366; margin-bottom: 20px; }
-    
-    .gallery { 
-      display: flex; 
-      overflow-x: auto; 
-      gap: 20px; 
-      padding-bottom: 20px; 
-      scroll-snap-type: x mandatory;
-      justify-content: center;
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
     }
-    
-    .gallery-item { 
-      flex: 0 0 200px; 
-      background: white; 
-      border-radius: 10px; 
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
-      padding: 10px; 
-      text-align: center; 
-      scroll-snap-align: start;
+
+    header p {
+      margin-top: 10px;
+      font-size: 1rem;
     }
-    
-    .gallery-item img { 
-      width: 100%; height: 150px; object-fit: cover; 
-      border-radius: 5px; cursor: pointer; 
+
+    nav {
+      margin-top: 15px;
+    }
+
+    nav a {
+      color: #ffcc00;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    nav a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    /* MAIN CONTENT */
+    main {
+      text-align: center;
+      padding: 30px 20px 100px;
+    }
+
+    .gallery-section {
+      margin-top: 40px;
+    }
+
+    .section-title {
+      color: #003366;
+      margin-bottom: 25px;
+      font-size: 2rem;
+    }
+
+    /* GALLERY GRID */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    .gallery-item {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item img:hover {
+      transform: scale(1.03);
+    }
+
+    .gallery-item p {
+      padding: 15px;
+      margin: 0;
+      font-weight: bold;
+      color: #003366;
+      background: white;
     }
 
     /* LIGHTBOX */
-    .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); justify-content: center; align-items: center; z-index: 2000; flex-direction: column; }
-    .lightbox img { max-width: 90%; max-height: 80%; border-radius: 10px; box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); }
-    .lightbox .close { position: absolute; top: 20px; right: 30px; font-size: 30px; color: white; cursor: pointer; font-weight: bold; }
-    .lightbox .arrow { position: absolute; top: 50%; font-size: 50px; color: white; cursor: pointer; transform: translateY(-50%); }
-    .lightbox .arrow.left { left: 20px; }
-    .lightbox .arrow.right { right: 20px; }
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.92);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 3000;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .lightbox img {
+      max-width: 92%;
+      max-height: 82%;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(255,255,255,0.25);
+    }
+
+    .lightbox .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 42px;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .lightbox .close:hover {
+      transform: scale(1.2);
+    }
+
+    .lightbox .arrow {
+      position: absolute;
+      top: 50%;
+      font-size: 60px;
+      color: white;
+      cursor: pointer;
+      transform: translateY(-50%);
+      user-select: none;
+      transition: 0.2s;
+    }
+
+    .lightbox .arrow:hover {
+      transform: translateY(-50%) scale(1.15);
+    }
+
+    .lightbox .arrow.left {
+      left: 25px;
+    }
+
+    .lightbox .arrow.right {
+      right: 25px;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      width: 100%;
+      margin-top: 40px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .section-title {
+        font-size: 1.6rem;
+      }
+
+      .gallery-item img {
+        height: 220px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 8px;
+      }
+
+      .lightbox .arrow {
+        font-size: 45px;
+      }
+    }
+
+    /* FADE IN */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
   </style>
 </head>
+
 <body>
 
   <header>
     <h1>DJ's Custom Prints</h1>
     <p>Your one-stop shop for personalized 3D prints, proudly made in Newfoundland!</p>
+
     <nav>
       <a href="index.html">Home</a>
       <a href="gallery.html">Gallery</a>
@@ -78,34 +235,88 @@
   </header>
 
   <main>
+
+    <!-- 3D PRINTS -->
     <div class="gallery-section">
       <h2 class="section-title">3D Prints</h2>
+
       <div class="gallery">
-        <div class="gallery-item"><img src="images/3d prints/redwings front.jpeg" alt="Jersey Front"><p>Redwings Front</p></div>
-        <div class="gallery-item"><img src="images/3d prints/therockkeychain.jpg" alt="Rock Keychain"><p>Rock Keychain</p></div>
-        <div class="gallery-item"><img src="images/3d prints/angelheart.jpg" alt="Angel Heart"><p>Angel Heart</p></div>
-        <div class="gallery-item"><img src="images/3d prints/MontrealCanadienskeychain.jpg" alt="Canadiens"><p>Canadiens</p></div>
-        <div class="gallery-item"><img src="images/3d prints/dogkeychain.jpg" alt="Dog"><p>Dog</p></div>
-        <div class="gallery-item"><img src="images/3d prints/jesus.jpg" alt="Jesus"><p>Jesus</p></div>
-        <div class="gallery-item"><img src="images/3d prints/dogkeychain1.jpg" alt="Dog 2"><p>Dog 2</p></div>
-        <div class="gallery-item"><img src="images/3d prints/nlcustomcoordinatesjpg.jpg" alt="Coords"><p>Coords</p></div>
+
+        <div class="gallery-item">
+          <img src="images/3d prints/redwings front.jpeg" alt="Redwings Front">
+          <p>Redwings Front</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="images/3d prints/therockkeychain.jpg" alt="Rock Keychain">
+          <p>Rock Keychain</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="images/3d prints/angelheart.jpg" alt="Angel Heart">
+          <p>Angel Heart</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="images/3d prints/MontrealCanadienskeychain.jpg" alt="Canadiens">
+          <p>Canadiens Keychain</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="images/3d prints/dogkeychain.jpg" alt="Dog Keychain">
+          <p>Dog Keychain</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="images/3d prints/jesus.jpg" alt="Jesus">
+          <p>Jesus Print</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="images/3d prints/dogkeychain1.jpg" alt="Dog 2">
+          <p>Dog Keychain 2</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="images/3d prints/nlcustomcoordinatesjpg.jpg" alt="Coordinates">
+          <p>Custom Coordinates</p>
+        </div>
+
       </div>
     </div>
 
+    <!-- CRICUT -->
     <div class="gallery-section">
       <h2 class="section-title">Cricut Creations</h2>
+
       <div class="gallery">
-        <div class="gallery-item"><img src="images/cricut/gamer birthday card (cover) (1).png" alt="Gamer Card Cover"><p>Gamer Card Cover</p></div>
-        <div class="gallery-item"><img src="images/cricut/gamer birthday card (inside) (1).png" alt="Gamer Card Inside"><p>Gamer Card Inside</p></div>
+
+        <div class="gallery-item">
+          <img src="images/cricut/gamer birthday card (cover) (1).png" alt="Gamer Card Cover">
+          <p>Gamer Card Cover</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="images/cricut/gamer birthday card (inside) (1).png" alt="Gamer Card Inside">
+          <p>Gamer Card Inside</p>
+        </div>
+
       </div>
     </div>
 
+    <!-- LIGHTBOX -->
     <div class="lightbox" id="lightbox">
+
       <span class="close" onclick="closeLightbox()">&times;</span>
+
       <span class="arrow left" onclick="prevImage()">&#8249;</span>
+
       <img id="lightbox-img" src="" alt="">
+
       <span class="arrow right" onclick="nextImage()">&#8250;</span>
+
     </div>
+
   </main>
 
   <footer>
@@ -116,6 +327,7 @@
     const images = document.querySelectorAll('.gallery img');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
+
     let currentIndex = 0;
 
     images.forEach((img, index) => {
@@ -126,9 +338,45 @@
       });
     });
 
-    function closeLightbox() { lightbox.style.display = 'none'; }
-    function nextImage() { currentIndex = (currentIndex + 1) % images.length; lightboxImg.src = images[currentIndex].src; }
-    function prevImage() { currentIndex = (currentIndex - 1 + images.length) % images.length; lightboxImg.src = images[currentIndex].src; }
+    function closeLightbox() {
+      lightbox.style.display = 'none';
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      lightboxImg.src = images[currentIndex].src;
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      lightboxImg.src = images[currentIndex].src;
+    }
+
+    // Close when clicking outside image
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    // Keyboard controls
+    document.addEventListener('keydown', (e) => {
+      if (lightbox.style.display === 'flex') {
+
+        if (e.key === 'Escape') {
+          closeLightbox();
+        }
+
+        if (e.key === 'ArrowRight') {
+          nextImage();
+        }
+
+        if (e.key === 'ArrowLeft') {
+          prevImage();
+        }
+      }
+    });
   </script>
+
 </body>
 </html>
