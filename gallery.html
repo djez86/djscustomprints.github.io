@@ -5,36 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery - DJ's Custom Prints</title>
   <style>
-    /* Consistent Page Styling */
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: linear-gradient(to bottom, #e6f7ff, #ffffff); }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
     
-    /* Unified Header Design */
-    header { background: #003366; color: #fff; padding: 15px 10px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-    header h1 { margin: 0; font-size: 2em; } /* Adjusted to match homepage */
-    header p { margin: 5px 0 15px; font-size: 1em; }
-    
-    /* Gold Pill-Shaped Buttons */
+    /* Exact Header & Nav Style from Homepage */
+    header { 
+      background-color: #003366; 
+      color: white; 
+      text-align: center; 
+      padding: 20px 0; 
+      position: sticky; 
+      top: 0; 
+      z-index: 1000; 
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    header h1 { margin: 0; }
     nav { margin-top: 10px; }
-    nav a { 
-      background: linear-gradient(to bottom, #fcf6ba, #bf953f);
-      color: #002142; text-decoration: none; margin: 0 10px; font-weight: bold; padding: 8px 20px; border-radius: 20px; display: inline-block;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    nav a { color: #ffcc00; text-decoration: none; margin: 0 15px; font-weight: bold; }
+    nav a:hover { color: white; text-decoration: underline; }
+
+    /* Gallery Specific Layout */
+    .gallery-section { margin: 20px auto; padding: 20px; max-width: 900px; }
+    .section-title { color: #003366; text-align: center; }
+    
+    .gallery { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+      gap: 20px; 
+      padding: 20px;
+    }
+    
+    .gallery-item { 
+      background: white; 
+      padding: 15px; 
+      border-radius: 10px; 
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+      text-align: center;
+    }
+    
+    .gallery-item img { 
+      width: 100%; 
+      height: 200px; 
+      object-fit: cover; 
+      border-radius: 5px; 
     }
 
-    /* Gallery Section */
-    .gallery-section { margin-top: 30px; padding: 0 20px; }
-    .section-title { text-align: center; color: #003366; margin-bottom: 20px; }
-    .gallery { display: flex; overflow-x: auto; gap: 20px; padding-bottom: 20px; }
-    .gallery-item { flex: 0 0 200px; background: #fff; border: 1px solid #ccc; border-radius: 8px; padding: 10px; text-align: center; }
-    .gallery-item img { width: 100%; height: 150px; object-fit: cover; border-radius: 5px; cursor: pointer; }
-
-    footer { background: #003366; color: #fff; text-align: center; padding: 15px 0; margin-top: 40px; }
+    footer { background-color: #003366; color: white; text-align: center; padding: 10px; position: fixed; bottom: 0; width: 100%; z-index: 999; }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Gallery</h1>
+    <h1>DJ's Custom Prints</h1>
     <p>Explore our custom creations!</p>
     <nav>
       <a href="index.html">Home</a>
@@ -43,32 +64,21 @@
     </nav>
   </header>
 
-  <main>
-    <div class="gallery-section">
-      <h2 class="section-title">3D Prints</h2>
-      <div class="gallery">
-        <div class="gallery-item"><img src="images/3d prints/redwings front.jpeg" alt="Jersey Front"><p>Redwings Front</p></div>
-        <div class="gallery-item"><img src="images/3d prints/therockkeychain.jpg" alt="Rock Keychain"><p>Rock Keychain</p></div>
-        <div class="gallery-item"><img src="images/3d prints/angelheart.jpg" alt="Angel Heart"><p>Angel Heart</p></div>
-        <div class="gallery-item"><img src="images/3d prints/MontrealCanadienskeychain.jpg" alt="Canadiens"><p>Canadiens</p></div>
-        <div class="gallery-item"><img src="images/3d prints/dogkeychain.jpg" alt="Dog"><p>Dog</p></div>
-        <div class="gallery-item"><img src="images/3d prints/jesus.jpg" alt="Jesus"><p>Jesus</p></div>
-        <div class="gallery-item"><img src="images/3d prints/dogkeychain1.jpg" alt="Dog 2"><p>Dog 2</p></div>
-        <div class="gallery-item"><img src="images/3d prints/nlcustomcoordinatesjpg.jpg" alt="Coords"><p>Coords</p></div>
-      </div>
+  <main class="gallery-section">
+    <h2 class="section-title">3D Prints</h2>
+    <div class="gallery">
+      <div class="gallery-item"><img src="images/3d prints/redwings front.jpeg" alt="Redwings"><p>Redwings Front</p></div>
+      <div class="gallery-item"><img src="images/3d prints/therockkeychain.jpg" alt="Rock"><p>Rock Keychain</p></div>
     </div>
 
-    <div class="gallery-section">
-      <h2 class="section-title">Cricut Creations</h2>
-      <div class="gallery">
-        <div class="gallery-item"><img src="images/cricut/gamer birthday card (cover) (1).png" alt="Gamer Card Cover"><p>Gamer Card Cover</p></div>
-        <div class="gallery-item"><img src="images/cricut/gamer birthday card (inside) (1).png" alt="Gamer Card Inside"><p>Gamer Card Inside</p></div>
-      </div>
+    <h2 class="section-title">Cricut Creations</h2>
+    <div class="gallery">
+      <div class="gallery-item"><img src="images/cricut/gamer birthday card (cover) (1).png" alt="Gamer Card"><p>Gamer Card</p></div>
     </div>
   </main>
 
   <footer>
-    <p>&copy; 2026 DJ's Custom Prints. All rights reserved.</p>
+    <p>&copy; 2026 DJ's Custom Prints. Proudly made in Newfoundland. All rights reserved.</p>
   </footer>
 
 </body>
