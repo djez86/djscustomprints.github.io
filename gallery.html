@@ -4,22 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery - DJ's Custom Prints</title>
-
   <link rel="icon" href="images/favicon-16x16.png" type="image/png">
-
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom, #e6f7ff, #ffffff);
+      background-color: #f4f4f4;
     }
 
-    /* SAME HEADER AS HOMEPAGE */
+    /* Same header/nav/footer styling as homepage */
     header {
       background-color: #003366;
       color: white;
@@ -31,29 +25,24 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     }
 
-    header h1 {
-      margin: 0;
-    }
-
-    nav {
-      margin-top: 10px;
-    }
-
+    header h1 { margin: 0; }
+    nav { margin-top: 10px; }
     nav a {
       color: #ffcc00;
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
     }
-
     nav a:hover {
       color: white;
       text-decoration: underline;
     }
 
-    /* MAIN */
     main {
-      padding-bottom: 40px;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+      padding-bottom: 90px;
     }
 
     .gallery-section {
@@ -65,10 +54,9 @@
       text-align: center;
       color: #003366;
       margin-bottom: 20px;
-      font-size: 2rem;
     }
 
-    /* GALLERY */
+    /* Horizontal Slider Layout */
     .gallery {
       display: flex;
       overflow-x: auto;
@@ -79,40 +67,37 @@
     }
 
     .gallery-item {
-      flex: 0 0 220px;
+      flex: 0 0 200px;
       background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       padding: 10px;
       text-align: center;
       scroll-snap-align: start;
-      transition: transform 0.3s ease;
-    }
-
-    .gallery-item:hover {
-      transform: translateY(-5px);
     }
 
     .gallery-item img {
       width: 100%;
-      height: 180px;
+      height: 150px;
       object-fit: cover;
       border-radius: 5px;
       cursor: pointer;
-      transition: transform 0.3s ease;
+      transition: transform 0.2s;
     }
 
-    .gallery-item img:hover {
-      transform: scale(1.03);
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      z-index: 999;
     }
 
-    .gallery-item p {
-      margin-top: 10px;
-      font-weight: bold;
-      color: #003366;
-    }
-
-    /* LIGHTBOX */
+    /* Lightbox */
     .lightbox {
       display: none;
       position: fixed;
@@ -120,10 +105,10 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.9);
+      background: rgba(0, 0, 0, 0.9);
       justify-content: center;
       align-items: center;
-      z-index: 2000;
+      z-index: 1000;
       flex-direction: column;
     }
 
@@ -131,14 +116,14 @@
       max-width: 90%;
       max-height: 80%;
       border-radius: 10px;
-      box-shadow: 0 0 15px rgba(255,255,255,0.8);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
     }
 
     .lightbox .close {
       position: absolute;
       top: 20px;
       right: 30px;
-      font-size: 35px;
+      font-size: 30px;
       color: white;
       cursor: pointer;
       font-weight: bold;
@@ -151,52 +136,16 @@
       color: white;
       cursor: pointer;
       transform: translateY(-50%);
-      user-select: none;
     }
 
-    .lightbox .arrow.left {
-      left: 20px;
-    }
-
-    .lightbox .arrow.right {
-      right: 20px;
-    }
-
-    /* FOOTER */
-    footer {
-      background-color: #003366;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      width: 100%;
-      margin-top: 40px;
-    }
-
-    /* MOBILE */
-    @media (max-width: 600px) {
-      .gallery-item {
-        flex: 0 0 180px;
-      }
-
-      .gallery-item img {
-        height: 150px;
-      }
-
-      nav a {
-        display: inline-block;
-        margin: 8px;
-      }
-    }
+    .lightbox .arrow.left { left: 20px; }
+    .lightbox .arrow.right { right: 20px; }
   </style>
 </head>
-
 <body>
-
-  <!-- IDENTICAL HEADER -->
   <header>
     <h1>DJ's Custom Prints</h1>
     <p>Your one-stop shop for personalized 3D prints, proudly made in Newfoundland!</p>
-
     <nav>
       <a href="index.html">Home</a>
       <a href="gallery.html">Gallery</a>
@@ -205,90 +154,40 @@
   </header>
 
   <main>
-
-    <!-- 3D PRINTS -->
     <div class="gallery-section">
-
       <h2 class="section-title">3D Prints</h2>
-
       <div class="gallery">
-
-        <div class="gallery-item">
-          <img src="images/3d prints/redwings front.jpeg" alt="Jersey Front">
-          <p>Redwings Front</p>
-        </div>
-
-        <div class="gallery-item">
-          <img src="images/3d prints/therockkeychain.jpg" alt="Rock Keychain">
-          <p>Rock Keychain</p>
-        </div>
-
-        <div class="gallery-item">
-          <img src="images/3d prints/angelheart.jpg" alt="Angel Heart">
-          <p>Angel Heart</p>
-        </div>
-
-        <div class="gallery-item">
-          <img src="images/3d prints/MontrealCanadienskeychain.jpg" alt="Canadiens">
-          <p>Canadiens</p>
-        </div>
-
-        <div class="gallery-item">
-          <img src="images/3d prints/dogkeychain.jpg" alt="Dog">
-          <p>Dog</p>
-        </div>
-
-        <div class="gallery-item">
-          <img src="images/3d prints/jesus.jpg" alt="Jesus">
-          <p>Jesus</p>
-        </div>
-
-        <div class="gallery-item">
-          <img src="images/3d prints/dogkeychain1.jpg" alt="Dog 2">
-          <p>Dog 2</p>
-        </div>
-
-        <div class="gallery-item">
-          <img src="images/3d prints/nlcustomcoordinatesjpg.jpg" alt="Coords">
-          <p>Coords</p>
-        </div>
-
+        <div class="gallery-item"><img src="images/3d prints/redwings front.jpeg" alt="Jersey Front"><p>Redwings Front</p></div>
+        <div class="gallery-item"><img src="images/3d prints/therockkeychain.jpg" alt="Rock Keychain"><p>Rock Keychain</p></div>
+        <div class="gallery-item"><img src="images/3d prints/angelheart.jpg" alt="Angel Heart"><p>Angel Heart</p></div>
+        <div class="gallery-item"><img src="images/3d prints/MontrealCanadienskeychain.jpg" alt="Canadiens"><p>Canadiens</p></div>
+        <div class="gallery-item"><img src="images/3d prints/dogkeychain.jpg" alt="Dog"><p>Dog</p></div>
+        <div class="gallery-item"><img src="images/3d prints/jesus.jpg" alt="Jesus"><p>Jesus</p></div>
+        <div class="gallery-item"><img src="images/3d prints/dogkeychain1.jpg" alt="Dog 2"><p>Dog 2</p></div>
+        <div class="gallery-item"><img src="images/3d prints/nlcustomcoordinatesjpg.jpg" alt="Coords"><p>Coords</p></div>
       </div>
     </div>
 
-    <!-- CRICUT -->
     <div class="gallery-section">
-
       <h2 class="section-title">Cricut Creations</h2>
-
       <div class="gallery">
-
         <div class="gallery-item">
           <img src="images/cricut/gamer birthday card (cover) (1).png" alt="Gamer Card Cover">
           <p>Gamer Card Cover</p>
         </div>
-
         <div class="gallery-item">
           <img src="images/cricut/gamer birthday card (inside) (1).png" alt="Gamer Card Inside">
           <p>Gamer Card Inside</p>
         </div>
-
       </div>
     </div>
 
-    <!-- LIGHTBOX -->
     <div class="lightbox" id="lightbox">
-
       <span class="close" onclick="closeLightbox()">&times;</span>
-
       <span class="arrow left" onclick="prevImage()">&#8249;</span>
-
       <img id="lightbox-img" src="" alt="">
-
       <span class="arrow right" onclick="nextImage()">&#8250;</span>
-
     </div>
-
   </main>
 
   <footer>
@@ -299,7 +198,6 @@
     const images = document.querySelectorAll('.gallery img');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
-
     let currentIndex = 0;
 
     images.forEach((img, index) => {
@@ -324,6 +222,5 @@
       lightboxImg.src = images[currentIndex].src;
     }
   </script>
-
 </body>
-</html>
+                                 </html>
