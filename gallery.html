@@ -4,182 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery - DJ's Custom Prints</title>
-  <link rel="icon" href="favicon-16x16.png" type="image/png">
   <style>
     /* Global Page Styling */
-    body { 
-      font-family: Arial, sans-serif; 
-      margin: 0; 
-      padding: 0; 
-      background-color: #f4f7f9; 
-      color: #222222; 
-    }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f7f9; }
     
-    /* Sticky Header Layout */
-    header { 
-      background-color: #003366; 
-      color: white; 
-      text-align: center; 
-      padding: 20px 0; 
-      position: sticky; 
-      top: 0; 
-      z-index: 1000; 
-      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-    }
+    /* Sticky Header - Shiny Gold Theme */
+    header { background-color: #003366; color: white; text-align: center; padding: 20px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.15); }
     header h1 { margin: 0; font-size: 1.7rem; }
     nav { margin-top: 15px; }
     
-    /* SHINY GOLD NAV BUTTONS */
+    /* Shiny Gold Nav Buttons */
     nav a { 
       background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
-      color: #002142; 
-      text-decoration: none; 
-      margin: 0 8px; 
-      font-weight: bold; 
-      font-size: 0.95rem; 
-      padding: 6px 16px;
-      border-radius: 20px;
-      display: inline-block;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      text-shadow: 0 1px 0 rgba(255,255,255,0.4);
-      transition: transform 0.1s, box-shadow 0.1s;
+      color: #002142; text-decoration: none; margin: 0 8px; font-weight: bold; font-size: 0.95rem; 
+      padding: 6px 16px; border-radius: 20px; display: inline-block;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2); transition: transform 0.1s;
     }
-    nav a:hover { 
-      transform: translateY(-1px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    }
+    nav a:hover { transform: translateY(-1px); }
     
-    /* Main Content Wrapper */
-    main { 
-      max-width: 600px; 
-      margin: 0 auto; 
-      padding: 20px 15px 140px 15px; 
-      text-align: center; 
-    }
+    /* Gallery Grid */
+    .gallery { padding: 20px; max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+    .gallery-item { background: #fff; border-radius: 12px; padding: 15px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05); width: 200px; }
+    .gallery-item img { width: 100%; border-radius: 8px; cursor: pointer; transition: transform 0.2s; }
+    .gallery-item img:hover { transform: scale(1.05); }
     
-    /* Clean, Professional Content Card */
-    .content-box {
-      background-color: #ffffff; 
-      border-radius: 12px; 
-      padding: 25px 20px; 
-      margin-bottom: 25px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      border: 1px solid #e1e8ed;
-    }
-    
-    /* SHINY GOLD CARD UNDERLINES */
-    .content-box h2 {
-      color: #003366;
-      margin-top: 0;
-      font-size: 1.35rem;
-      letter-spacing: 0.5px;
-      position: relative;
-      display: inline-block;
-      padding-bottom: 8px;
-      margin-bottom: 25px;
-    }
-    .content-box h2::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 4px;
-      border-radius: 2px;
-      background: linear-gradient(90deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
-    }
-
-    /* Subheadings for Categories */
-    .category-title {
-      color: #003366;
-      font-size: 1.15rem;
-      font-weight: bold;
-      text-align: left;
-      margin-top: 20px;
-      margin-bottom: 10px;
-      border-left: 4px solid #b38728;
-      padding-left: 8px;
-    }
-    
-    /* Photo Gallery Layout */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-bottom: 30px;
-    }
-
-    /* Single Item Layout for centering a single photo */
-    .single-item-wrapper {
-      max-width: 280px;
-      margin: 0 auto 30px auto;
-    }
-    
-    .gallery-item {
-      background-color: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.03);
-    }
-    
-    .gallery-item img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    
-    .gallery-item p {
-      font-size: 0.9rem;
-      font-weight: bold;
-      color: #333333;
-      margin: 8px 5px;
-      text-align: center;
-    }
-    
-    /* SHINY GOLD MAIN ACTION BUTTONS */
-    .button {
-      display: inline-block; 
-      margin-top: 15px; 
-      padding: 12px 40px; 
-      background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
-      color: #002142; 
-      text-decoration: none;
-      border-radius: 30px; 
-      font-weight: bold; 
-      font-size: 1.05rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-      text-shadow: 0 1px 0 rgba(255,255,255,0.4);
-      transition: transform 0.1s, box-shadow 0.1s;
-    }
-    .button:hover { 
-      transform: translateY(-1px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.25);
-    }
-    .button:active { 
-      transform: scale(0.98); 
-    }
-    
-    /* Footer Styling */
-    footer { 
-      background-color: #003366; 
-      color: white; 
-      text-align: center; 
-      padding: 15px; 
-      position: fixed; 
-      bottom: 0; 
-      width: 100%; 
-      z-index: 999; 
-      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-    }
-    footer p { margin: 0; font-size: 0.9rem; }
+    /* Lightbox Styling */
+    .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); justify-content: center; align-items: center; z-index: 2000; }
+    .lightbox img { max-width: 90%; max-height: 80%; border-radius: 10px; border: 3px solid #bf953f; }
+    .close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer; }
+    .arrow { position: absolute; top: 50%; font-size: 50px; color: white; cursor: pointer; padding: 20px; }
+    .left { left: 10px; } .right { right: 10px; }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>DJ's Custom Prints</h1>
-    <p style="margin: 5px 0 0 0; font-size: 0.95rem; padding: 0 10px;">Your one-stop shop for personalized apparel & 3D prints!</p>
+    <h1>Gallery</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="gallery.html">Gallery</a>
@@ -188,36 +48,70 @@
   </header>
 
   <main>
-    <div class="content-box">
-      <h2>OUR WORK GALLERY</h2>
-      
-      <div class="category-title">⚙️ 3D Prints & Keepsakes</div>
-      <div class="single-item-wrapper">
-        <div class="gallery-item">
-          <img src="Newfoundland1.jpg" alt="Custom 3D Print - Newfoundland Map Silhouette">
-          <p>Custom Newfoundland Print</p>
-        </div>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="redwings front.jpeg" alt="Redwings Front" data-index="0">
+        <p>Redwings Front</p>
       </div>
-      
-      <div class="category-title">👕 Custom Apparel & Vinyl</div>
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <img src="WonderWoman1.jpg" alt="Custom Wonder Woman Shirt Front">
-          <p>Custom Apparel Design</p>
-        </div>
-        <div class="gallery-item">
-          <img src="WonderWoman2.jpg" alt="Custom Wonder Woman Shirt Detail">
-          <p>Vinyl Detail View</p>
-        </div>
+      <div class="gallery-item">
+        <img src="redwings back.jpeg" alt="Redwings Back" data-index="1">
+        <p>Redwings Back</p>
       </div>
-      
-      <a href="index.html" class="button">Back to Home</a>
+      <div class="gallery-item">
+        <img src="therockkeychain.jpg" alt="The Rock Keychain" data-index="2">
+        <p>The Rock Keychain</p>
+      </div>
+      <div class="gallery-item">
+        <img src="angelheart.jpg" alt="Angel Heart" data-index="3">
+        <p>Angel Heart</p>
+      </div>
+      <div class="gallery-item">
+        <img src="MontrealCanadienskeychain.jpg" alt="Montreal Canadiens" data-index="4">
+        <p>Montreal Canadiens</p>
+      </div>
+      <div class="gallery-item">
+        <img src="dogkeychain.jpg" alt="Dog Keychain" data-index="5">
+        <p>Dog Keychain</p>
+      </div>
+      <div class="gallery-item">
+        <img src="jesus.jpg" alt="Jesus" data-index="6">
+        <p>Jesus</p>
+      </div>
+      <div class="gallery-item">
+        <img src="dogkeychain1.jpg" alt="Dog Keychain Alternate" data-index="7">
+        <p>Dog Keychain Alt</p>
+      </div>
+      <div class="gallery-item">
+        <img src="nlcustomcoordinatesjpg.jpg" alt="Coordinates" data-index="8">
+        <p>Coordinates</p>
+      </div>
+    </div>
+
+    <div class="lightbox" id="lightbox">
+      <span class="close" onclick="closeLightbox()">&times;</span>
+      <span class="arrow left" onclick="prevImage()">&#8249;</span>
+      <img id="lightbox-img" src="" alt="">
+      <span class="arrow right" onclick="nextImage()">&#8250;</span>
     </div>
   </main>
 
-  <footer>
-    <p>&copy; 2024–2026 DJ's Custom Prints. All rights reserved.</p>
-  </footer>
+  <script>
+    const images = document.querySelectorAll('.gallery-item img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    let currentIndex = 0;
 
+    images.forEach((img, index) => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+        currentIndex = index;
+      });
+    });
+
+    function closeLightbox() { lightbox.style.display = 'none'; }
+    function nextImage() { currentIndex = (currentIndex + 1) % images.length; lightboxImg.src = images[currentIndex].src; }
+    function prevImage() { currentIndex = (currentIndex - 1 + images.length) % images.length; lightboxImg.src = images[currentIndex].src; }
+  </script>
 </body>
 </html>
