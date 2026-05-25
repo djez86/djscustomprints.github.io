@@ -5,38 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery - DJ's Custom Prints</title>
   <style>
-    /* Global Page Styling */
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f7f9; }
-
-    /* Sticky Header - Homepage Style */
-    header { background-color: #003366; color: white; text-align: center; padding: 20px 10px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-    header h1 { margin: 0; font-size: 2.5em; }
-    header p { margin: 10px 0 0; font-size: 1.2em; }
+    /* Consistent Page Styling */
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: linear-gradient(to bottom, #e6f7ff, #ffffff); }
     
-    /* Gold Pill-Shaped Nav Buttons */
-    nav { margin-top: 20px; }
+    /* Unified Header Design */
+    header { background: #003366; color: #fff; padding: 15px 10px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+    header h1 { margin: 0; font-size: 2em; } /* Adjusted to match homepage */
+    header p { margin: 5px 0 15px; font-size: 1em; }
+    
+    /* Gold Pill-Shaped Buttons */
+    nav { margin-top: 10px; }
     nav a { 
-      background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
-      color: #002142; text-decoration: none; margin: 0 10px; font-weight: bold; padding: 8px 20px; border-radius: 30px; display: inline-block;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2); transition: transform 0.1s;
+      background: linear-gradient(to bottom, #fcf6ba, #bf953f);
+      color: #002142; text-decoration: none; margin: 0 10px; font-weight: bold; padding: 8px 20px; border-radius: 20px; display: inline-block;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
-    nav a:hover { transform: translateY(-2px); }
 
     /* Gallery Section */
-    .gallery-section { margin-top: 40px; padding: 0 20px; }
+    .gallery-section { margin-top: 30px; padding: 0 20px; }
     .section-title { text-align: center; color: #003366; margin-bottom: 20px; }
-    .gallery { display: flex; overflow-x: auto; gap: 20px; padding-bottom: 20px; scroll-snap-type: x mandatory; }
-    .gallery-item { flex: 0 0 200px; background: #fff; border: 1px solid #ccc; border-radius: 12px; padding: 10px; text-align: center; scroll-snap-align: start; }
-    .gallery-item img { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; cursor: pointer; }
+    .gallery { display: flex; overflow-x: auto; gap: 20px; padding-bottom: 20px; }
+    .gallery-item { flex: 0 0 200px; background: #fff; border: 1px solid #ccc; border-radius: 8px; padding: 10px; text-align: center; }
+    .gallery-item img { width: 100%; height: 150px; object-fit: cover; border-radius: 5px; cursor: pointer; }
 
     footer { background: #003366; color: #fff; text-align: center; padding: 15px 0; margin-top: 40px; }
-
-    /* Lightbox */
-    .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); justify-content: center; align-items: center; z-index: 2000; flex-direction: column; }
-    .lightbox img { max-width: 90%; max-height: 80%; border-radius: 10px; border: 3px solid #bf953f; }
-    .close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer; }
-    .arrow { position: absolute; top: 50%; font-size: 50px; color: white; cursor: pointer; padding: 20px; }
-    .left { left: 10px; } .right { right: 10px; }
   </style>
 </head>
 <body>
@@ -55,7 +47,7 @@
     <div class="gallery-section">
       <h2 class="section-title">3D Prints</h2>
       <div class="gallery">
-        <div class="gallery-item"><img src="images/3d prints/redwings front.jpeg" alt="Redwings Front"><p>Redwings Front</p></div>
+        <div class="gallery-item"><img src="images/3d prints/redwings front.jpeg" alt="Jersey Front"><p>Redwings Front</p></div>
         <div class="gallery-item"><img src="images/3d prints/therockkeychain.jpg" alt="Rock Keychain"><p>Rock Keychain</p></div>
         <div class="gallery-item"><img src="images/3d prints/angelheart.jpg" alt="Angel Heart"><p>Angel Heart</p></div>
         <div class="gallery-item"><img src="images/3d prints/MontrealCanadienskeychain.jpg" alt="Canadiens"><p>Canadiens</p></div>
@@ -73,34 +65,11 @@
         <div class="gallery-item"><img src="images/cricut/gamer birthday card (inside) (1).png" alt="Gamer Card Inside"><p>Gamer Card Inside</p></div>
       </div>
     </div>
-
-    <div class="lightbox" id="lightbox">
-      <span class="close" onclick="closeLightbox()">&times;</span>
-      <span class="arrow left" onclick="prevImage()">&#8249;</span>
-      <img id="lightbox-img" src="" alt="">
-      <span class="arrow right" onclick="nextImage()">&#8250;</span>
-    </div>
   </main>
 
   <footer>
     <p>&copy; 2026 DJ's Custom Prints. All rights reserved.</p>
   </footer>
 
-  <script>
-    const images = document.querySelectorAll('.gallery img');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    let currentIndex = 0;
-    images.forEach((img, index) => {
-      img.addEventListener('click', () => {
-        lightbox.style.display = 'flex';
-        lightboxImg.src = img.src;
-        currentIndex = index;
-      });
-    });
-    function closeLightbox() { lightbox.style.display = 'none'; }
-    function nextImage() { currentIndex = (currentIndex + 1) % images.length; lightboxImg.src = images[currentIndex].src; }
-    function prevImage() { currentIndex = (currentIndex - 1 + images.length) % images.length; lightboxImg.src = images[currentIndex].src; }
-  </script>
 </body>
 </html>
