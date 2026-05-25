@@ -7,7 +7,7 @@
   <style>
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
     
-    /* Exact Header & Nav Style from Homepage */
+    /* Header and Navigation - Matched to Homepage */
     header { 
       background-color: #003366; 
       color: white; 
@@ -20,35 +20,35 @@
     }
     header h1 { margin: 0; }
     nav { margin-top: 10px; }
-    nav a { color: #ffcc00; text-decoration: none; margin: 0 15px; font-weight: bold; }
+    nav a { 
+      color: #ffcc00; 
+      text-decoration: none; 
+      margin: 0 15px; 
+      font-weight: bold; 
+    }
     nav a:hover { color: white; text-decoration: underline; }
-
-    /* Gallery Specific Layout */
-    .gallery-section { margin: 20px auto; padding: 20px; max-width: 900px; }
-    .section-title { color: #003366; text-align: center; }
     
-    .gallery { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
-      gap: 20px; 
-      padding: 20px;
+    /* Gallery Section Styling */
+    .gallery-container { padding: 20px; text-align: center; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+    .gallery-item {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
     }
     
-    .gallery-item { 
-      background: white; 
-      padding: 15px; 
-      border-radius: 10px; 
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
-      text-align: center;
-    }
-    
-    .gallery-item img { 
-      width: 100%; 
-      height: 200px; 
-      object-fit: cover; 
-      border-radius: 5px; 
-    }
-
     footer { background-color: #003366; color: white; text-align: center; padding: 10px; position: fixed; bottom: 0; width: 100%; z-index: 999; }
   </style>
 </head>
@@ -64,16 +64,10 @@
     </nav>
   </header>
 
-  <main class="gallery-section">
-    <h2 class="section-title">3D Prints</h2>
-    <div class="gallery">
-      <div class="gallery-item"><img src="images/3d prints/redwings front.jpeg" alt="Redwings"><p>Redwings Front</p></div>
-      <div class="gallery-item"><img src="images/3d prints/therockkeychain.jpg" alt="Rock"><p>Rock Keychain</p></div>
-    </div>
-
-    <h2 class="section-title">Cricut Creations</h2>
-    <div class="gallery">
-      <div class="gallery-item"><img src="images/cricut/gamer birthday card (cover) (1).png" alt="Gamer Card"><p>Gamer Card</p></div>
+  <main class="gallery-container">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="images/3d prints/redwings front.jpeg" alt="Redwings Front"><p>Redwings Front</p></div>
     </div>
   </main>
 
