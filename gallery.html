@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery - DJ's Custom Prints</title>
 
   <link rel="icon" href="images/favicon-16x16.png" type="image/png">
 
   <style>
-    * {
-      box-sizing: border-box;
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
-      color: #333;
+      background: linear-gradient(to bottom, #e6f7ff, #ffffff);
     }
 
-    /* HEADER */
+    /* SAME HEADER AS HOMEPAGE */
     header {
       background-color: #003366;
       color: white;
       text-align: center;
-      padding: 20px 15px;
+      padding: 20px 0;
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -34,16 +33,10 @@
 
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
-    }
-
-    header p {
-      margin-top: 10px;
-      font-size: 1rem;
     }
 
     nav {
-      margin-top: 15px;
+      margin-top: 10px;
     }
 
     nav a {
@@ -51,7 +44,6 @@
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
-      transition: 0.3s ease;
     }
 
     nav a:hover {
@@ -59,49 +51,53 @@
       text-decoration: underline;
     }
 
-    /* MAIN CONTENT */
+    /* MAIN */
     main {
-      text-align: center;
-      padding: 30px 20px 100px;
+      padding-bottom: 40px;
     }
 
     .gallery-section {
       margin-top: 40px;
+      padding: 0 20px;
     }
 
     .section-title {
+      text-align: center;
       color: #003366;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
       font-size: 2rem;
     }
 
-    /* GALLERY GRID */
+    /* GALLERY */
     .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-      max-width: 1300px;
-      margin: auto;
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding-bottom: 20px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
     }
 
     .gallery-item {
-      background: white;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      flex: 0 0 220px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 10px;
+      text-align: center;
+      scroll-snap-align: start;
+      transition: transform 0.3s ease;
     }
 
     .gallery-item:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+      transform: translateY(-5px);
     }
 
     .gallery-item img {
       width: 100%;
-      height: 250px;
+      height: 180px;
       object-fit: cover;
-      display: block;
+      border-radius: 5px;
       cursor: pointer;
       transition: transform 0.3s ease;
     }
@@ -111,68 +107,59 @@
     }
 
     .gallery-item p {
-      padding: 15px;
-      margin: 0;
+      margin-top: 10px;
       font-weight: bold;
       color: #003366;
-      background: white;
     }
 
     /* LIGHTBOX */
     .lightbox {
       display: none;
       position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.92);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
       justify-content: center;
       align-items: center;
+      z-index: 2000;
       flex-direction: column;
-      z-index: 3000;
-      animation: fadeIn 0.3s ease;
     }
 
     .lightbox img {
-      max-width: 92%;
-      max-height: 82%;
-      border-radius: 12px;
-      box-shadow: 0 0 25px rgba(255,255,255,0.25);
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.8);
     }
 
     .lightbox .close {
       position: absolute;
       top: 20px;
       right: 30px;
-      font-size: 42px;
+      font-size: 35px;
       color: white;
       cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .lightbox .close:hover {
-      transform: scale(1.2);
+      font-weight: bold;
     }
 
     .lightbox .arrow {
       position: absolute;
       top: 50%;
-      font-size: 60px;
+      font-size: 50px;
       color: white;
       cursor: pointer;
       transform: translateY(-50%);
       user-select: none;
-      transition: 0.2s;
-    }
-
-    .lightbox .arrow:hover {
-      transform: translateY(-50%) scale(1.15);
     }
 
     .lightbox .arrow.left {
-      left: 25px;
+      left: 20px;
     }
 
     .lightbox .arrow.right {
-      right: 25px;
+      right: 20px;
     }
 
     /* FOOTER */
@@ -180,42 +167,24 @@
       background-color: #003366;
       color: white;
       text-align: center;
-      padding: 15px;
+      padding: 10px;
       width: 100%;
       margin-top: 40px;
     }
 
     /* MOBILE */
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      .section-title {
-        font-size: 1.6rem;
+      .gallery-item {
+        flex: 0 0 180px;
       }
 
       .gallery-item img {
-        height: 220px;
+        height: 150px;
       }
 
       nav a {
         display: inline-block;
         margin: 8px;
-      }
-
-      .lightbox .arrow {
-        font-size: 45px;
-      }
-    }
-
-    /* FADE IN */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
       }
     }
   </style>
@@ -223,6 +192,7 @@
 
 <body>
 
+  <!-- IDENTICAL HEADER -->
   <header>
     <h1>DJ's Custom Prints</h1>
     <p>Your one-stop shop for personalized 3D prints, proudly made in Newfoundland!</p>
@@ -238,12 +208,13 @@
 
     <!-- 3D PRINTS -->
     <div class="gallery-section">
+
       <h2 class="section-title">3D Prints</h2>
 
       <div class="gallery">
 
         <div class="gallery-item">
-          <img src="images/3d prints/redwings front.jpeg" alt="Redwings Front">
+          <img src="images/3d prints/redwings front.jpeg" alt="Jersey Front">
           <p>Redwings Front</p>
         </div>
 
@@ -259,27 +230,27 @@
 
         <div class="gallery-item">
           <img src="images/3d prints/MontrealCanadienskeychain.jpg" alt="Canadiens">
-          <p>Canadiens Keychain</p>
+          <p>Canadiens</p>
         </div>
 
         <div class="gallery-item">
-          <img src="images/3d prints/dogkeychain.jpg" alt="Dog Keychain">
-          <p>Dog Keychain</p>
+          <img src="images/3d prints/dogkeychain.jpg" alt="Dog">
+          <p>Dog</p>
         </div>
 
         <div class="gallery-item">
           <img src="images/3d prints/jesus.jpg" alt="Jesus">
-          <p>Jesus Print</p>
+          <p>Jesus</p>
         </div>
 
         <div class="gallery-item">
           <img src="images/3d prints/dogkeychain1.jpg" alt="Dog 2">
-          <p>Dog Keychain 2</p>
+          <p>Dog 2</p>
         </div>
 
         <div class="gallery-item">
-          <img src="images/3d prints/nlcustomcoordinatesjpg.jpg" alt="Coordinates">
-          <p>Custom Coordinates</p>
+          <img src="images/3d prints/nlcustomcoordinatesjpg.jpg" alt="Coords">
+          <p>Coords</p>
         </div>
 
       </div>
@@ -287,6 +258,7 @@
 
     <!-- CRICUT -->
     <div class="gallery-section">
+
       <h2 class="section-title">Cricut Creations</h2>
 
       <div class="gallery">
@@ -320,7 +292,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2026 DJ's Custom Prints. Proudly made in Newfoundland. All rights reserved.</p>
+    <p>&copy; 2026 DJ's Custom Prints. Proudly made in Newfoundland.</p>
   </footer>
 
   <script>
@@ -351,31 +323,6 @@
       currentIndex = (currentIndex - 1 + images.length) % images.length;
       lightboxImg.src = images[currentIndex].src;
     }
-
-    // Close when clicking outside image
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) {
-        closeLightbox();
-      }
-    });
-
-    // Keyboard controls
-    document.addEventListener('keydown', (e) => {
-      if (lightbox.style.display === 'flex') {
-
-        if (e.key === 'Escape') {
-          closeLightbox();
-        }
-
-        if (e.key === 'ArrowRight') {
-          nextImage();
-        }
-
-        if (e.key === 'ArrowLeft') {
-          prevImage();
-        }
-      }
-    });
   </script>
 
 </body>
