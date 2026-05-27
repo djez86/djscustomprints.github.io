@@ -4,21 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery - DJ's Custom Prints</title>
+  <link rel="icon" href="images/favicon-16x16.png" type="image/png">
   <style>
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f7f9; color: #222222; }
 
-    /* Header & Nav */
-    header { background-color: #003366; color: white; text-align: center; padding: 20px 0; }
+    header { background-color: #003366; color: white; text-align: center; padding: 20px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.15); }
+    header h1 { margin: 0; font-size: 1.7rem; }
+    header p { margin: 5px 0 0 0; font-size: 0.95rem; padding: 0 10px; }
+    
+    nav { margin-top: 15px; }
     nav a { 
       background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
-      color: #002142; font-weight: bold; padding: 6px 16px; border-radius: 20px; text-decoration: none; margin: 0 5px;
+      color: #002142; text-decoration: none; margin: 0 8px; font-weight: bold; font-size: 0.95rem; padding: 6px 16px; border-radius: 20px; display: inline-block; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
 
-    main { max-width: 600px; margin: 0 auto; text-align: center; padding: 20px 15px; }
+    main { max-width: 600px; margin: 0 auto; text-align: center; padding: 20px 15px 140px 15px; }
 
-    /* Logo and Heading Styles - MATCHED TO CONTACT PAGE */
-    .logo-wrapper { margin-bottom: 15px; }
-    .logo-wrapper img { width: 100%; max-width: 150px; mix-blend-mode: multiply; display: block; margin: 0 auto; }
+    /* Logo and Header Text Styling */
+    .logo-wrapper { margin-bottom: 20px; }
+    .logo-wrapper img { display: block; margin: 0 auto; width: 60%; max-width: 150px; mix-blend-mode: multiply; }
     
     .page-title { 
       color: #003366; 
@@ -26,6 +30,7 @@
       font-weight: 700; 
       text-transform: uppercase; 
       margin: 15px 0; 
+      text-align: center;
     }
     
     .gold-line {
@@ -33,21 +38,26 @@
       width: 80%;
       max-width: 300px; 
       height: 4px;
-      background: linear-gradient(90deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
       border-radius: 2px;
+      background: linear-gradient(90deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
     }
 
-    /* Gallery Cards */
-    .gallery-section { background-color: #ffffff; border-radius: 12px; padding: 20px; margin-bottom: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid #e1e8ed; }
-    .section-title { color: #003366; font-size: 1.35rem; margin-bottom: 15px; }
-    .gallery { display: flex; gap: 20px; overflow-x: auto; padding-bottom: 10px; }
-    .gallery-item { flex: 0 0 200px; text-align: center; }
+    /* Gallery Content */
+    .gallery-section { background-color: #ffffff; border-radius: 12px; padding: 25px 20px; margin-bottom: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid #e1e8ed; }
+    .section-title { color: #003366; margin-top: 0; font-size: 1.35rem; position: relative; display: inline-block; padding-bottom: 8px; margin-bottom: 18px; }
+    .section-title::after { content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 4px; border-radius: 2px; background: linear-gradient(90deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%); }
+
+    .gallery { display: flex; overflow-x: auto; gap: 20px; padding-bottom: 20px; scroll-snap-type: x mandatory; }
+    .gallery-item { flex: 0 0 200px; background: #fff; border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px; text-align: center; }
     .gallery-item img { width: 100%; height: 150px; object-fit: cover; border-radius: 5px; }
+
+    footer { background-color: #003366; color: white; text-align: center; padding: 15px; position: fixed; bottom: 0; width: 100%; }
   </style>
 </head>
 <body>
   <header>
     <h1>DJ's Custom Prints</h1>
+    <p>Your one-stop shop for personalized apparel & 3D prints!</p>
     <nav>
       <a href="index.html">Home</a>
       <a href="gallery.html">Gallery</a>
@@ -57,7 +67,7 @@
 
   <main>
     <div class="logo-wrapper">
-      <img src="images/website%20logo.png" alt="Logo">
+      <img src="images/website%20logo.png" alt="DJ's Custom Prints Logo">
       <div class="page-title">Gallery</div>
       <div class="gold-line"></div>
     </div>
@@ -65,10 +75,24 @@
     <div class="gallery-section">
       <h2 class="section-title">3D Prints</h2>
       <div class="gallery">
-        <div class="gallery-item"><img src="images/3d prints/redwings front.jpeg" alt="Jersey"><p>Redwings Front</p></div>
-        <div class="gallery-item"><img src="images/3d prints/therockkeychain.jpg" alt="Rock"><p>Rock Keychain</p></div>
+        <div class="gallery-item"><img src="images/3d prints/redwings front.jpeg" alt="Jersey Front"><p>Redwings Front</p></div>
+        <div class="gallery-item"><img src="images/3d prints/therockkeychain.jpg" alt="Rock Keychain"><p>Rock Keychain</p></div>
+        <div class="gallery-item"><img src="images/3d prints/angelheart.jpg" alt="Angel Heart"><p>Angel Heart</p></div>
+        <div class="gallery-item"><img src="images/3d prints/MontrealCanadienskeychain.jpg" alt="Canadiens"><p>Canadiens</p></div>
+      </div>
+    </div>
+
+    <div class="gallery-section">
+      <h2 class="section-title">Cricut Creations</h2>
+      <div class="gallery">
+        <div class="gallery-item"><img src="images/cricut/both%20custom%20thermosis.jpg" alt="Both Thermoses"><p>Both Thermoses</p></div>
+        <div class="gallery-item"><img src="images/cricut/custom%20grandfather%20thermos.jpg" alt="Grandfather Thermos"><p>Grandfather Thermos</p></div>
       </div>
     </div>
   </main>
+
+  <footer>
+    <p>&copy; 2026 DJ's Custom Prints. All rights reserved.</p>
+  </footer>
 </body>
 </html>
