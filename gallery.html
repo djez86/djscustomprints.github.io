@@ -3,96 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery - DJ's Custom Prints</title>
-  <link rel="icon" href="images/favicon-16x16.png" type="image/png">
+  <title>Gallery | DJ's Custom Prints</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f7f9; color: #222222; }
-
-    header { background-color: #003366; color: white; text-align: center; padding: 20px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.15); }
-    header h1 { margin: 0; font-size: 1.7rem; }
-    header p { margin: 5px 0 0 0; font-size: 0.95rem; padding: 0 10px; }
+    header { background-color: #003366; color: white; text-align: center; padding: 20px 0; }
+    main { max-width: 800px; margin: 0 auto; padding: 20px; }
     
-    nav { margin-top: 15px; }
-    nav a { 
-      background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
-      color: #002142; text-decoration: none; margin: 0 8px; font-weight: bold; font-size: 0.95rem; padding: 6px 16px; border-radius: 20px; display: inline-block; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    /* Gallery Grid Styling */
+    .gallery-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+      gap: 15px; 
+      margin-bottom: 30px; 
     }
-
-    main { max-width: 600px; margin: 0 auto; padding: 20px 15px 140px 15px; }
-
-    .content-box {
-      background-color: #ffffff; 
-      border-radius: 12px; 
-      padding: 25px 20px; 
-      margin-bottom: 25px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      border: 1px solid #e1e8ed;
+    .gallery-grid img { 
+      width: 100%; 
+      height: 200px; 
+      object-fit: cover; 
+      border-radius: 8px; 
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
     }
-
-    .content-box h2 {
-      color: #003366;
-      margin-top: 0;
-      font-size: 1.35rem;
-      position: relative;
-      display: inline-block;
-      width: 100%;
-      padding-bottom: 8px;
-      margin-bottom: 18px;
-      text-align: center;
-    }
-    .content-box h2::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 4px;
-      border-radius: 2px;
-      background: linear-gradient(90deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
-    }
-
-    .gallery { display: flex; overflow-x: auto; gap: 20px; padding-bottom: 20px; scroll-snap-type: x mandatory; }
-    .gallery-item { flex: 0 0 200px; background: #fff; border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px; text-align: center; }
-    .gallery-item img { width: 100%; height: 150px; object-fit: cover; border-radius: 5px; }
-
-    footer { background-color: #003366; color: white; text-align: center; padding: 15px; position: fixed; bottom: 0; width: 100%; }
+    h2, h3 { color: #003366; text-align: center; }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>DJ's Custom Prints</h1>
-    <p>Your one-stop shop for personalized apparel & 3D prints!</p>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <h1>Gallery</h1>
+    <nav><a href="index.html" style="color: white;">Back to Home</a></nav>
   </header>
 
   <main>
-    <div class="content-box">
-      <img src="images/website%20logo.png" alt="DJ's Custom Prints Logo" style="display: block; margin: 0 auto 15px auto; width: 60%; max-width: 150px; mix-blend-mode: multiply;">
-      
-      <h2>GALLERY</h2>
+    <h2>Our Work</h2>
 
-      <h3 style="color:#003366; font-size: 1.1rem; margin-top: 20px;">3D Prints</h3>
-      <div class="gallery">
-        <div class="gallery-item"><img src="images/3d prints/redwings front.jpeg" alt="Jersey Front"><p>Redwings Front</p></div>
-        <div class="gallery-item"><img src="images/3d prints/therockkeychain.jpg" alt="Rock Keychain"><p>Rock Keychain</p></div>
-        <div class="gallery-item"><img src="images/3d prints/angelheart.jpg" alt="Angel Heart"><p>Angel Heart</p></div>
-        <div class="gallery-item"><img src="images/3d prints/MontrealCanadienskeychain.jpg" alt="Canadiens"><p>Canadiens</p></div>
-      </div>
+    <h3>3D Prints</h3>
+    <div class="gallery-grid">
+      <img src="images/3d%20prints/MontrealCanadienskeychain.jpg" alt="Montreal Canadiens Keychain">
+      <img src="images/3d%20prints/angelheart.jpg" alt="Angel Heart">
+      <img src="images/3d%20prints/dogkeychain.jpg" alt="Dog Keychain">
+      <img src="images/3d%20prints/dogkeychain1.jpg" alt="Dog Keychain 1">
+      <img src="images/3d%20prints/jesus.jpg" alt="Jesus">
+      <img src="images/3d%20prints/nlcustomcoordinatesjpg.jpg" alt="NL Custom Coordinates">
+      <img src="images/3d%20prints/redwings%20back.jpeg" alt="Red Wings Back">
+      <img src="images/3d%20prints/redwings%20front.jpeg" alt="Red Wings Front">
+      <img src="images/3d%20prints/therockkeychain.jpg" alt="The Rock Keychain">
+    </div>
 
-      <h3 style="color:#003366; font-size: 1.1rem; margin-top: 20px;">Cricut Creations</h3>
-      <div class="gallery">
-        <div class="gallery-item"><img src="images/cricut/both%20custom%20thermosis.jpg" alt="Both Thermoses"><p>Both Thermoses</p></div>
-        <div class="gallery-item"><img src="images/cricut/custom%20grandfather%20thermos.jpg" alt="Grandfather Thermos"><p>Grandfather Thermos</p></div>
-      </div>
+    <h3>Cricut Designs</h3>
+    <div class="gallery-grid">
+      <img src="images/cricut/both%20custom%20thermosis.jpg" alt="Custom Thermoses">
+      <img src="images/cricut/custom%20grandfather%20thermos.jpg" alt="Grandfather Thermos">
+      <img src="images/cricut/custom%20grandmother%20thermos.jpg" alt="Grandmother Thermos">
+      <img src="images/cricut/gamer%20birthday%20card%20(cover)%20(1).jpg" alt="Gamer Birthday Card Cover">
+      <img src="images/cricut/gamer%20birthday%20card%20(inside)%20(1).jpg" alt="Gamer Birthday Card Inside">
     </div>
   </main>
 
-  <footer>
-    <p>&copy; 2026 DJ's Custom Prints. All rights reserved.</p>
-  </footer>
 </body>
 </html>
