@@ -11,38 +11,43 @@
     header { background-color: #003366; color: white; text-align: center; padding: 20px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.15); }
     header h1 { margin: 0; font-size: 1.7rem; }
     header p { margin: 5px 0 0 0; font-size: 0.95rem; padding: 0 10px; }
-    nav { margin-top: 15px; }
     
+    nav { margin-top: 15px; }
     nav a { 
       background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
-      color: #002142; text-decoration: none; margin: 0 8px; font-weight: bold; font-size: 0.95rem; padding: 6px 16px; border-radius: 20px; display: inline-block; box-shadow: 0 2px 5px rgba(0,0,0,0.2); transition: transform 0.1s, box-shadow 0.1s;
+      color: #002142; text-decoration: none; margin: 0 8px; font-weight: bold; font-size: 0.95rem; padding: 6px 16px; border-radius: 20px; display: inline-block; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
-    nav a:hover { transform: translateY(-1px); box-shadow: 0 4px 8px rgba(0,0,0,0.3); }
 
     main { max-width: 600px; margin: 0 auto; text-align: center; padding: 20px 15px 140px 15px; }
 
-    /* Logo and Header Styling */
+    /* Logo and Header Text Styling */
     .logo-wrapper { margin-bottom: 20px; }
     .logo-wrapper img { display: block; margin: 0 auto; width: 60%; max-width: 150px; mix-blend-mode: multiply; }
     
-    .gallery-header-text { color: #003366; font-size: 1.8rem; margin: 10px 0; font-weight: bold; }
+    .page-title { 
+      color: #003366; 
+      font-size: 1.5rem; 
+      margin: 15px 0; 
+      font-weight: bold; 
+      text-transform: uppercase; 
+    }
     
     .gold-line {
-      margin: 15px auto 30px auto;
+      margin: 0 auto 30px auto;
       width: 80%;
       height: 4px;
       border-radius: 2px;
       background: linear-gradient(90deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
     }
 
-    .gallery-section { margin-top: 20px; background-color: #ffffff; border-radius: 12px; padding: 25px 20px; margin-bottom: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid #e1e8ed; }
-
+    /* Gallery Content */
+    .gallery-section { background-color: #ffffff; border-radius: 12px; padding: 25px 20px; margin-bottom: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid #e1e8ed; }
     .section-title { color: #003366; margin-top: 0; font-size: 1.35rem; position: relative; display: inline-block; padding-bottom: 8px; margin-bottom: 18px; }
     .section-title::after { content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 4px; border-radius: 2px; background: linear-gradient(90deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%); }
 
-    .gallery { display: flex; overflow-x: auto; gap: 20px; padding-bottom: 20px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
-    .gallery-item { flex: 0 0 200px; background: #fff; border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px; text-align: center; scroll-snap-align: start; }
-    .gallery-item img { width: 100%; height: 150px; object-fit: cover; border-radius: 5px; cursor: pointer; transition: transform 0.2s; }
+    .gallery { display: flex; overflow-x: auto; gap: 20px; padding-bottom: 20px; scroll-snap-type: x mandatory; }
+    .gallery-item { flex: 0 0 200px; background: #fff; border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px; text-align: center; }
+    .gallery-item img { width: 100%; height: 150px; object-fit: cover; border-radius: 5px; }
 
     footer { background-color: #003366; color: white; text-align: center; padding: 15px; position: fixed; bottom: 0; width: 100%; }
   </style>
@@ -61,7 +66,7 @@
   <main>
     <div class="logo-wrapper">
       <img src="images/website%20logo.png" alt="DJ's Custom Prints Logo">
-      <div class="gallery-header-text">Gallery</div>
+      <div class="page-title">Gallery</div>
       <div class="gold-line"></div>
     </div>
 
@@ -72,10 +77,6 @@
         <div class="gallery-item"><img src="images/3d prints/therockkeychain.jpg" alt="Rock Keychain"><p>Rock Keychain</p></div>
         <div class="gallery-item"><img src="images/3d prints/angelheart.jpg" alt="Angel Heart"><p>Angel Heart</p></div>
         <div class="gallery-item"><img src="images/3d prints/MontrealCanadienskeychain.jpg" alt="Canadiens"><p>Canadiens</p></div>
-        <div class="gallery-item"><img src="images/3d prints/dogkeychain.jpg" alt="Dog"><p>Dog</p></div>
-        <div class="gallery-item"><img src="images/3d prints/jesus.jpg" alt="Jesus"><p>Jesus</p></div>
-        <div class="gallery-item"><img src="images/3d prints/dogkeychain1.jpg" alt="Dog 2"><p>Dog 2</p></div>
-        <div class="gallery-item"><img src="images/3d prints/nlcustomcoordinatesjpg.jpg" alt="Coords"><p>Coords</p></div>
       </div>
     </div>
 
@@ -84,9 +85,6 @@
       <div class="gallery">
         <div class="gallery-item"><img src="images/cricut/both%20custom%20thermosis.jpg" alt="Both Thermoses"><p>Both Thermoses</p></div>
         <div class="gallery-item"><img src="images/cricut/custom%20grandfather%20thermos.jpg" alt="Grandfather Thermos"><p>Grandfather Thermos</p></div>
-        <div class="gallery-item"><img src="images/cricut/custom%20grandmother%20thermos.jpg" alt="Grandmother Thermos"><p>Grandmother Thermos</p></div>
-        <div class="gallery-item"><img src="images/cricut/gamer%20birthday%20card%20(cover)%20(1).png" alt="Gamer Card Cover"><p>Gamer Card Cover</p></div>
-        <div class="gallery-item"><img src="images/cricut/gamer%20birthday%20card%20(inside)%20(1).png" alt="Gamer Card Inside"><p>Gamer Card Inside</p></div>
       </div>
     </div>
   </main>
