@@ -18,32 +18,38 @@
       color: #002142; text-decoration: none; margin: 0 8px; font-weight: bold; font-size: 0.95rem; padding: 6px 16px; border-radius: 20px; display: inline-block; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
 
-    main { max-width: 600px; margin: 0 auto; text-align: center; padding: 20px 15px 140px 15px; }
+    main { max-width: 600px; margin: 0 auto; padding: 20px 15px 140px 15px; }
 
-    /* Logo and Header Text Styling */
-    .logo-wrapper { margin-bottom: 20px; }
-    .logo-wrapper img { display: block; margin: 0 auto; width: 60%; max-width: 150px; mix-blend-mode: multiply; }
-    
-    .page-title { 
-      color: #003366; 
-      font-size: 1.5rem; 
-      margin: 15px 0; 
-      font-weight: bold; 
-      text-transform: uppercase; 
+    .content-box {
+      background-color: #ffffff; 
+      border-radius: 12px; 
+      padding: 25px 20px; 
+      margin-bottom: 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      border: 1px solid #e1e8ed;
     }
-    
-    .gold-line {
-      margin: 0 auto 30px auto;
-      width: 80%;
+
+    .content-box h2 {
+      color: #003366;
+      margin-top: 0;
+      font-size: 1.35rem;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      padding-bottom: 8px;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+    .content-box h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
       height: 4px;
       border-radius: 2px;
       background: linear-gradient(90deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
     }
-
-    /* Gallery Content */
-    .gallery-section { background-color: #ffffff; border-radius: 12px; padding: 25px 20px; margin-bottom: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid #e1e8ed; }
-    .section-title { color: #003366; margin-top: 0; font-size: 1.35rem; position: relative; display: inline-block; padding-bottom: 8px; margin-bottom: 18px; }
-    .section-title::after { content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 4px; border-radius: 2px; background: linear-gradient(90deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%); }
 
     .gallery { display: flex; overflow-x: auto; gap: 20px; padding-bottom: 20px; scroll-snap-type: x mandatory; }
     .gallery-item { flex: 0 0 200px; background: #fff; border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px; text-align: center; }
@@ -64,24 +70,20 @@
   </header>
 
   <main>
-    <div class="logo-wrapper">
-      <img src="images/website%20logo.png" alt="DJ's Custom Prints Logo">
-      <div class="page-title">Gallery</div>
-      <div class="gold-line"></div>
-    </div>
+    <div class="content-box">
+      <img src="images/website%20logo.png" alt="DJ's Custom Prints Logo" style="display: block; margin: 0 auto 15px auto; width: 60%; max-width: 150px; mix-blend-mode: multiply;">
+      
+      <h2>GALLERY</h2>
 
-    <div class="gallery-section">
-      <h2 class="section-title">3D Prints</h2>
+      <h3 style="color:#003366; font-size: 1.1rem; margin-top: 20px;">3D Prints</h3>
       <div class="gallery">
         <div class="gallery-item"><img src="images/3d prints/redwings front.jpeg" alt="Jersey Front"><p>Redwings Front</p></div>
         <div class="gallery-item"><img src="images/3d prints/therockkeychain.jpg" alt="Rock Keychain"><p>Rock Keychain</p></div>
         <div class="gallery-item"><img src="images/3d prints/angelheart.jpg" alt="Angel Heart"><p>Angel Heart</p></div>
         <div class="gallery-item"><img src="images/3d prints/MontrealCanadienskeychain.jpg" alt="Canadiens"><p>Canadiens</p></div>
       </div>
-    </div>
 
-    <div class="gallery-section">
-      <h2 class="section-title">Cricut Creations</h2>
+      <h3 style="color:#003366; font-size: 1.1rem; margin-top: 20px;">Cricut Creations</h3>
       <div class="gallery">
         <div class="gallery-item"><img src="images/cricut/both%20custom%20thermosis.jpg" alt="Both Thermoses"><p>Both Thermoses</p></div>
         <div class="gallery-item"><img src="images/cricut/custom%20grandfather%20thermos.jpg" alt="Grandfather Thermos"><p>Grandfather Thermos</p></div>
