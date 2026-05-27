@@ -7,188 +7,42 @@
   <link rel="icon" href="images/favicon-16x16.png" type="image/png">
   <style>
     /* Global Page Styling */
-    body { 
-      font-family: Arial, sans-serif; 
-      margin: 0; 
-      padding: 0; 
-      background-color: #f4f7f9; 
-      color: #222222; 
-    }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f7f9; color: #222222; }
     
-    /* Sticky Header Layout */
-    header { 
-      background-color: #003366; 
-      color: white; 
-      text-align: center; 
-      padding: 20px 0; 
-      position: sticky; 
-      top: 0; 
-      z-index: 1000; 
-      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-    }
+    header { background-color: #003366; color: white; text-align: center; padding: 20px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.15); }
     header h1 { margin: 0; font-size: 1.7rem; }
     nav { margin-top: 15px; }
     
-    /* SHINY GOLD NAV BUTTONS */
     nav a { 
       background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
-      color: #002142; 
-      text-decoration: none; 
-      margin: 0 8px; 
-      font-weight: bold; 
-      font-size: 0.95rem; 
-      padding: 6px 16px;
-      border-radius: 20px;
-      display: inline-block;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      text-shadow: 0 1px 0 rgba(255,255,255,0.4);
-      transition: transform 0.1s, box-shadow 0.1s;
-    }
-    nav a:hover { 
-      transform: translateY(-1px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      color: #002142; text-decoration: none; margin: 0 8px; font-weight: bold; font-size: 0.95rem; padding: 6px 16px; border-radius: 20px; display: inline-block; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
     
-    /* Main Content Wrapper */
-    main { 
-      max-width: 600px; 
-      margin: 0 auto; 
-      padding: 20px 15px 140px 15px; 
-      text-align: center; 
-    }
+    main { max-width: 600px; margin: 0 auto; padding: 20px 15px 140px 15px; text-align: center; }
     
-    /* HERO BRANDING SECTION */
-    .hero-branding {
-      margin: 20px 0 30px 0;
-    }
-    .hero-logo {
-      width: 85%;
-      max-width: 320px;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-      mix-blend-mode: multiply;
-    }
+    .hero-branding { margin: 20px 0 30px 0; }
+    .hero-logo { width: 85%; max-width: 320px; display: block; margin: 0 auto; mix-blend-mode: multiply; }
     
-    /* Clean, Professional Content Cards */
-    .content-box {
-      background-color: #ffffff; 
-      border-radius: 12px; 
-      padding: 25px 20px; 
-      margin-bottom: 25px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      border: 1px solid #e1e8ed;
-    }
+    .content-box { background-color: #ffffff; border-radius: 12px; padding: 25px 20px; margin-bottom: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid #e1e8ed; }
     
-    /* SHINY GOLD CARD UNDERLINES */
     .content-box h2 {
-      color: #003366;
-      margin-top: 0;
-      font-size: 1.35rem;
-      letter-spacing: 0.5px;
-      position: relative;
-      display: inline-block;
-      padding-bottom: 8px;
-      margin-bottom: 18px;
+      color: #003366; margin-top: 0; font-size: 1.35rem; position: relative; display: inline-block; padding-bottom: 8px; margin-bottom: 18px;
     }
     .content-box h2::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 4px;
-      border-radius: 2px;
+      content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 4px; border-radius: 2px;
       background: linear-gradient(90deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
     }
 
-    .content-box p {
-      font-size: 1.05rem;
-      line-height: 1.6;
-      color: #333333;
-      margin: 12px 0;
-      text-align: left;
-    }
+    .content-box p { font-size: 1.05rem; line-height: 1.6; color: #333333; margin: 12px 0; text-align: left; }
     
-    /* SHINY GOLD MAIN ACTION BUTTONS */
-    .button {
-      display: inline-block; 
-      margin-top: 15px; 
-      padding: 12px 40px;
-      background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
-      color: #002142; 
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: bold; 
-      font-size: 1.05rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-      text-shadow: 0 1px 0 rgba(255,255,255,0.4);
-      transition: transform 0.1s, box-shadow 0.1s;
-    }
-    .button:hover { 
-      transform: translateY(-1px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.25);
-    }
-    .button:active { 
-      transform: scale(0.98); 
-    }
+    .button { display: inline-block; margin-top: 15px; padding: 12px 40px; background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%); color: #002142; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 1.05rem; }
+    .fb-button { display: inline-block; margin-top: 15px; padding: 12px 35px; background-color: #1877f2; color: white; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 1.05rem; }
     
-    .fb-button {
-      display: inline-block; 
-      margin-top: 15px; 
-      padding: 12px 35px;
-      background-color: #1877f2; 
-      color: white; 
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: bold; 
-      font-size: 1.05rem;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.12);
-    }
-    .fb-button:hover { background-color: #145dbf; }
-
-    .sky-logo-badge {
-      display: block;
-      margin: 0 auto 15px auto;
-      width: 100%;
-      max-width: 150px;
-      height: auto;
-      mix-blend-mode: multiply;
-    }
-
-    .product-list {
-      list-style-type: none;
-      padding: 0;
-      margin: 15px 0;
-    }
-    .product-list li {
-      padding: 12px 5px;
-      font-size: 1.05rem;
-      font-weight: bold;
-      color: #00264d;
-      border-bottom: 1px dashed #e1e8ed;
-      text-align: left;
-    }
-    .product-list li:last-child { border-bottom: none; }
-    .product-list li.more-tagline {
-      font-style: italic;
-      color: #666666;
-      text-align: center;
-      margin-top: 12px;
-    }
+    .logo-badge { display: block; margin: 0 auto 15px auto; width: 100%; max-width: 150px; mix-blend-mode: multiply; }
+    .product-list { list-style-type: none; padding: 0; margin: 15px 0; }
+    .product-list li { padding: 12px 5px; font-size: 1.05rem; font-weight: bold; color: #00264d; border-bottom: 1px dashed #e1e8ed; text-align: left; }
     
-    footer { 
-      background-color: #003366; 
-      color: white; 
-      text-align: center; 
-      padding: 15px; 
-      position: fixed; 
-      bottom: 0; 
-      width: 100%; 
-      z-index: 999; 
-      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-    }
-    footer p { margin: 0; font-size: 0.9rem; }
+    footer { background-color: #003366; color: white; text-align: center; padding: 15px; position: fixed; bottom: 0; width: 100%; }
   </style>
 </head>
 <body>
@@ -204,7 +58,13 @@
   </header>
 
   <main>
-    
+    <div class="content-box">
+      <img src="images/Sky's logo.png" alt="Sky's Craft Lab Logo" class="logo-badge">
+      <h2>SKY'S CRAFT LAB</h2>
+      <p>Looking for high-quality custom apparel, 3D prints, or personalized vinyl craft designs? Check out our partner business! Operating independently right here in Newfoundland, specializing in beautiful, custom designs built to order.</p>
+      <a href="https://www.facebook.com/share/1D29E7Fj2v/" target="_blank" class="fb-button">Visit Her Facebook Page</a>
+    </div>
+
     <div class="hero-branding">
       <img src="images/website%20logo.png" alt="DJ's Custom Prints Official Logo" class="hero-logo">
     </div>
@@ -212,36 +72,12 @@
     <div class="content-box">
       <h2>ABOUT THE MAKER</h2>
       <p>Welcome to DJ's Custom Prints. Started in Roddickton on the Great Northern Peninsula and now operating out of Flatrock, we specialize in high quality 3D printing and bringing custom gear to life with Cricut.</p>
-      <p>From clothing like t-shirts, sweaters, and jerseys, to personalized keychains and unique gifts, every piece is made locally with a focus on quality and detail. We also hand paint and varnish our premium 3D prints to give them a great finish.</p>
-      <p style="color: #003366; font-weight: bold; text-align: center; margin-top: 20px;">Thank you for supporting a local Newfoundland business. Let's make something awesome!</p>
       <a href="gallery.html" class="button">Explore Our Gallery</a>
-    </div>
-
-    <div class="content-box">
-      <h2>OUR PRODUCTS</h2>
-      <ul class="product-list">
-        <li>👕 Custom Apparel (T-Shirts, Sweaters, Jerseys)</li>
-        <li>⚙️ High-Quality 3D Prints & Premium Keepsakes</li>
-        <li>🎄 Personalized Ornaments & Custom Keychains</li>
-        <li>📍 Custom Coordinates & Sports Themed Designs</li>
-        <li>🎁 Event-Specific Gifts</li>
-        <li class="more-tagline">And much more!</li>
-      </ul>
-      <a href="contact.html" class="button">Get in Touch</a>
-    </div>
-
-    <div class="content-box">
-      <img src="images/Sky's logo.png" alt="Sky's Craft Lab Logo" class="sky-logo-badge">
-      <h2>SKY'S CRAFT LAB</h2>
-      <p>Looking for high-quality custom apparel, 3D prints, or personalized vinyl craft designs? Check out our partner business! Operating independently right here in Newfoundland, specializing in beautiful, custom designs built to order.</p>
-      
-      <a href="https://www.facebook.com/share/1D29E7Fj2v/" target="_blank" class="fb-button">Visit Her Facebook Page</a>
     </div>
   </main>
 
   <footer>
     <p>&copy; 2024–2026 DJ's Custom Prints. All rights reserved.</p>
   </footer>
-
 </body>
 </html>
