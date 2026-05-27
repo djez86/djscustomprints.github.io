@@ -50,6 +50,20 @@
       padding: 20px 15px 140px 15px;
     }
 
+    /* Logo Styling */
+    .logo-container {
+      margin: 20px auto 15px auto;
+      width: 60%;
+      max-width: 150px;
+    }
+    .logo-container img {
+      width: 100%;
+      height: auto;
+      /* This allows the gold and deep blue to blend correctly */
+      mix-blend-mode: multiply; 
+      display: block;
+    }
+
     .gallery-section {
       margin-top: 40px;
       background-color: #ffffff; 
@@ -132,7 +146,9 @@
   </header>
 
   <main>
-    <img src="images/website%20logo.png" alt="DJ's Custom Prints Logo" style="display: block; margin: 20px auto 15px auto; width: 60%; max-width: 150px; height: auto; mix-blend-mode: multiply;">
+    <div class="logo-container">
+      <img src="images/website%20logo.png" alt="DJ's Custom Prints Logo">
+    </div>
 
     <div class="gallery-section">
       <h2 class="section-title">3D Prints</h2>
