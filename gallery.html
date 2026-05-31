@@ -8,7 +8,7 @@
   <style>
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
     
-    /* HOMEPAGE HEADER/NAV STYLES */
+    /* HEADER MATCHES HOMEPAGE EXACTLY */
     header { 
       background-color: #003366; 
       color: white; 
@@ -24,12 +24,8 @@
     nav a { color: #ffcc00; text-decoration: none; margin: 0 15px; font-weight: bold; }
     nav a:hover { color: white; text-decoration: underline; }
     
-    /* HOMEPAGE FOOTER STYLE */
-    footer { background-color: #003366; color: white; text-align: center; padding: 10px; position: fixed; bottom: 0; width: 100%; z-index: 999; }
-
-    /* GALLERY CONTENT STYLING */
-    main { text-align: center; padding: 20px; padding-bottom: 90px; }
-    .gallery-section { margin-top: 20px; }
+    /* GALLERY STYLING */
+    .gallery-section { margin-top: 20px; padding: 0 20px; text-align: center; }
     .section-title { color: #003366; margin-bottom: 20px; }
     
     .gallery { 
@@ -38,24 +34,32 @@
       gap: 20px; 
       padding-bottom: 20px; 
       scroll-snap-type: x mandatory;
+      max-width: 1000px;
+      margin: 0 auto;
       justify-content: center;
     }
     
     .gallery-item { 
       flex: 0 0 200px; 
-      background: white; 
+      background: #fff; 
+      border: 1px solid #ccc; 
       border-radius: 10px; 
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
       padding: 10px; 
       text-align: center; 
       scroll-snap-align: start;
     }
     
     .gallery-item img { 
-      width: 100%; height: 150px; object-fit: cover; 
-      border-radius: 5px; cursor: pointer; 
+      width: 100%; 
+      height: 150px; 
+      object-fit: cover; 
+      border-radius: 5px; 
+      cursor: pointer; 
+      transition: transform 0.2s; 
     }
-
+    .gallery-item img:hover { transform: scale(1.05); }
+    
     /* LIGHTBOX */
     .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); justify-content: center; align-items: center; z-index: 2000; flex-direction: column; }
     .lightbox img { max-width: 90%; max-height: 80%; border-radius: 10px; box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); }
@@ -63,13 +67,15 @@
     .lightbox .arrow { position: absolute; top: 50%; font-size: 50px; color: white; cursor: pointer; transform: translateY(-50%); }
     .lightbox .arrow.left { left: 20px; }
     .lightbox .arrow.right { right: 20px; }
+
+    footer { background-color: #003366; color: white; text-align: center; padding: 10px; position: fixed; bottom: 0; width: 100%; z-index: 999; }
   </style>
 </head>
 <body>
 
   <header>
     <h1>DJ's Custom Prints</h1>
-    <p>Your one-stop shop for personalized 3D prints, proudly made in Newfoundland!</p>
+    <p>Explore our custom creations!</p>
     <nav>
       <a href="index.html">Home</a>
       <a href="gallery.html">Gallery</a>
@@ -81,14 +87,7 @@
     <div class="gallery-section">
       <h2 class="section-title">3D Prints</h2>
       <div class="gallery">
-        <div class="gallery-item"><img src="images/3d prints/redwings front.jpeg" alt="Jersey Front"><p>Redwings Front</p></div>
-        <div class="gallery-item"><img src="images/3d prints/therockkeychain.jpg" alt="Rock Keychain"><p>Rock Keychain</p></div>
         <div class="gallery-item"><img src="images/3d prints/angelheart.jpg" alt="Angel Heart"><p>Angel Heart</p></div>
-        <div class="gallery-item"><img src="images/3d prints/MontrealCanadienskeychain.jpg" alt="Canadiens"><p>Canadiens</p></div>
-        <div class="gallery-item"><img src="images/3d prints/dogkeychain.jpg" alt="Dog"><p>Dog</p></div>
-        <div class="gallery-item"><img src="images/3d prints/jesus.jpg" alt="Jesus"><p>Jesus</p></div>
-        <div class="gallery-item"><img src="images/3d prints/dogkeychain1.jpg" alt="Dog 2"><p>Dog 2</p></div>
-        <div class="gallery-item"><img src="images/3d prints/nlcustomcoordinatesjpg.jpg" alt="Coords"><p>Coords</p></div>
       </div>
     </div>
 
@@ -109,7 +108,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2026 DJ's Custom Prints. Proudly made in Newfoundland. All rights reserved.</p>
+    <p>&copy; 2026 DJ's Custom Prints. Proudly made in Newfoundland.</p>
   </footer>
 
   <script>
